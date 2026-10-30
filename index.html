@@ -97,7 +97,33 @@
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased selection:bg-stone-300 selection:text-black">
+<body class="min-h-screen flex flex-col antialiased selection:bg-stone-300 selection:text-black pb-20 md:pb-8">
+
+  <!-- ============================================== -->
+  <!-- MOBILE BOTTOM THUMB BAR (FOR SMARTPHONES) -->
+  <!-- ============================================== -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 eink-surface border-t eink-border px-2 py-1.5 flex justify-around items-center shadow-xl">
+    <button onclick="toggleSidebar()" class="flex flex-col items-center gap-0.5 p-1 rounded text-[11px] font-semibold opacity-90 hover:opacity-100 transition">
+      <i data-lucide="menu" class="w-4 h-4"></i>
+      <span>সূচি</span>
+    </button>
+    <button onclick="loadLesson('eng-0')" class="flex flex-col items-center gap-0.5 p-1 rounded text-[11px] font-semibold opacity-90 hover:opacity-100 transition">
+      <span class="text-xs leading-none">🇬🇧</span>
+      <span>English</span>
+    </button>
+    <button onclick="loadLesson('bng-1')" class="flex flex-col items-center gap-0.5 p-1 rounded text-[11px] font-semibold opacity-90 hover:opacity-100 transition">
+      <span class="text-xs leading-none">🇧🇩</span>
+      <span>বাংলা</span>
+    </button>
+    <button onclick="loadLesson('mth-1')" class="flex flex-col items-center gap-0.5 p-1 rounded text-[11px] font-semibold opacity-90 hover:opacity-100 transition">
+      <span class="text-xs leading-none">📐</span>
+      <span>গণিত</span>
+    </button>
+    <button onclick="toggleEinkTheme()" class="flex flex-col items-center gap-0.5 p-1 rounded text-[11px] font-semibold opacity-90 hover:opacity-100 transition">
+      <span id="mobile-theme-icon" class="text-xs leading-none">🌙</span>
+      <span>মোড</span>
+    </button>
+  </nav>
 
   <!-- ============================================== -->
   <!-- TOP APP BAR -->
@@ -1111,18 +1137,21 @@
     function toggleEinkTheme() {
       const html = document.documentElement;
       const isNight = html.classList.contains('theme-eink-night');
+      const mobileIcon = document.getElementById('mobile-theme-icon');
       if (isNight) {
         html.classList.remove('theme-eink-night');
         html.classList.add('theme-eink-day');
         localStorage.setItem('eink_theme', 'day');
         document.getElementById('theme-icon').innerText = '🌙';
         document.getElementById('theme-text').innerText = 'E-Ink Night';
+        if (mobileIcon) mobileIcon.innerText = '🌙';
       } else {
         html.classList.remove('theme-eink-day');
         html.classList.add('theme-eink-night');
         localStorage.setItem('eink_theme', 'night');
         document.getElementById('theme-icon').innerText = '☀️';
         document.getElementById('theme-text').innerText = 'E-Ink Day';
+        if (mobileIcon) mobileIcon.innerText = '☀️';
       }
       lucide.createIcons();
     }
