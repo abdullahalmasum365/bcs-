@@ -1,0 +1,4 @@
+# Ignore large PDF files to keep GitHub repository fast and within free limits
+*.pdf
+scratch/
+temp_pages/
