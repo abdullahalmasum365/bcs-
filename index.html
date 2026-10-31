@@ -248,6 +248,10 @@
             <span class="shrink-0">●</span>
             <span class="truncate">১.৫: Voice Change: জিরো থেকে প্রো (গ্রাফিক্যাল)</span>
           </button>
+          <button onclick="loadLesson('eng-narration')" class="lesson-link w-full text-left px-3 py-2 rounded-lg flex items-center gap-2 font-medium border border-transparent hover:border-current/20" data-id="eng-narration">
+            <span class="shrink-0">●</span>
+            <span class="truncate">১.৬: Narration: বাস্তব প্রয়োগ ও বিগত প্রশ্নব্যাংক</span>
+          </button>
         </div>
 
         <!-- CATEGORY: BANGLA -->
@@ -392,6 +396,18 @@
               </ul>
             </div>
 
+            <!-- Milestone Entry 3 (Narration & Interactive Exam Bank) -->
+            <div class="eink-surface p-5 rounded-xl border eink-border space-y-3">
+              <div class="flex items-center justify-between border-b eink-border pb-2">
+                <span class="font-bold text-sm">📌 মাইলস্টোন ৩: ৩১ অক্টোবর ২০২৬ (Narration ও ইন্টারেক্টিভ প্রশ্নব্যাংক ইঞ্জিন)</span>
+                <span class="border eink-border px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">লাইভ ও কার্যকর</span>
+              </div>
+              <ul class="space-y-2 opacity-90 text-xs">
+                <li>✔️ <strong>Narration (১.৬):</strong> বাস্তব জীবনের হেডমাস্টার সিনারিও ও পেট্রোবাংলার মিটিং মিনিটস গুরুত্ব, ৩টি রূপান্তর স্তম্ভ, বিসিএস স্পেশাল ৩টি ফাঁদ (Universal Truth, Had better, Assertive order)।</li>
+                <li>✔️ <strong>ইন্টারেক্টিভ রিয়েল এক্সাম ব্যাংক ইঞ্জিন:</strong> ৪২তম বিসিএস, ৩৮তম বিসিএস, ৩৬তম বিসিএস, ১০ম বিসিএস ও পেট্রোবাংলার আসল প্রশ্নসহ অপশন সিলেকশন (সবুজ/লাল ইনস্ট্যান্ট ফিডব্যাক), 💡 হিন্ট বাটন এবং বিশদ লজিক্যাল ব্যাখ্যা সিস্টেম যুক্ত।</li>
+              </ul>
+            </div>
+
             <!-- Upcoming Milestone -->
             <div class="eink-card p-5 rounded-xl border eink-border space-y-2 opacity-80">
               <div class="flex items-center justify-between border-b eink-border pb-2">
@@ -399,8 +415,8 @@
                 <span class="text-[11px] border eink-border px-2 py-0.5 rounded">পরিকল্পিত</span>
               </div>
               <ul class="space-y-1.5 text-xs">
-                <li>⏳ বাংলা ব্যাকরণ: কারক ও বিভক্তি, সমাস চেনার শর্টকাট টেকনিক।</li>
-                <li>⏳ ইইই টেকনিক্যাল সার্কিট থিওরেম ও পেট্রোবাংলা বিগত বছরের লিখিত ম্যাথ ড্রিল।</li>
+                <li>⏳ Degree of Comparison (Positive, Comparative, Superlative সহজ ছক ও জব এক্সাম ব্যাংক)।</li>
+                <li>⏳ Simple, Complex, Compound বাক্য রূপান্তর ও Clauses শর্টকাট।</li>
               </ul>
             </div>
           </div>
@@ -1349,6 +1365,328 @@ ightarrow$ <strong>Participle</strong></li>
         // ----------------------------------------------------
         // BANGLA 2.1: SANDHI
         // ----------------------------------------------------
+              // ----------------------------------------------------
+      // ENGLISH 1.6: NARRATION (MASTERCLASS & EXAM BANK)
+      // ----------------------------------------------------
+      'eng-narration': {
+        category: 'English Grammar (Masterclass)',
+        dateCreated: '৩১ অক্টোবর ২০২৬',
+        lastUpdated: '৩১ অক্টোবর ২০২৬',
+        badge: 'বাস্তব প্রয়োগ ও বিগত প্রশ্নব্যাংক',
+        title: '১.৬: Narration (উক্তি পরিবর্তন): বাস্তব জীবনের ব্যবহার ও বিগত ২০ বছরের প্রশ্নব্যাংক',
+        readTime: '১৫ মিনিট পাঠ',
+        html: `
+          <div class="space-y-6 text-xs sm:text-sm">
+            
+            <!-- SECTION 1: WHY & REAL WORLD USAGE -->
+            <div class="p-5 rounded-xl eink-surface border eink-border space-y-3 shadow-sm">
+              <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full eink-card border eink-border font-bold flex items-center justify-center text-xs">🎯</span>
+                <h3 class="font-bold text-sm md:text-base">আমরা Narration কেন শিখছি? বাস্তবে এর কাজ কী?</h3>
+              </div>
+              <p class="opacity-90 leading-relaxed">
+                Narration মানে নিছক ব্যাকরণগত নিয়ম নয়। বাস্তব জীবনে একজনের মুখের কথাকে নিজের ভাষায় অর্থ পুরোপুরি ঠিক রেখে অন্য কারো কাছে নির্ভুলভাবে পৌঁছে দেওয়াই হলো <strong>Narration (রিপোর্টিং)</strong>।
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs pt-1">
+                <div class="p-3.5 rounded-lg eink-card border eink-border space-y-1.5">
+                  <strong class="text-sm block">🏫 স্কুল ও প্রাত্যহিক জীবনের উদাহরণ</strong>
+                  <p class="opacity-80">
+                    হেডমাস্টার আপনাকে বললেন: <em>"I am going to Dhaka tomorrow."</em><br>
+                    আপনি স্টাফরুমে অন্য শিক্ষকদের যদি হুবহু বলেন—"আমি কাল ঢাকা যাচ্ছি", তবে শিক্ষকরা ভাববেন আপনি যাচ্ছেন!<br>
+                    আপনাকে বলতে হবে: <strong>"হেডমাস্টার স্যার বললেন যে তিনি পরদিন ঢাকা যাচ্ছেন।"</strong> (The Headmaster said that he was going to Dhaka the next day.)
+                  </p>
+                </div>
+
+                <div class="p-3.5 rounded-lg eink-card border eink-border space-y-1.5">
+                  <strong class="text-sm block">⚡ পেট্রোবাংলা ও সরকারি অফিসে প্রকৌশলীর কাজ</strong>
+                  <p class="opacity-80">
+                    পেট্রোবাংলার বোর্ড মিটিং বা মন্ত্রণালয়ের মিটিংয়ে এমডি বা সচিব যে নির্দেশ দেন, অফিসিয়াল ফাইলে <strong>Meeting Minutes (সভার কার্যবিবরণী)</strong> এবং অফিস আদেশ লেখার সময় <strong>১০০% Indirect Speech</strong> ব্যবহার করতে হয়। সঠিক ন্যারেশন না জানলে ফাইলে গুরুতর মিসকমিউনিকেশন তৈরি হয়!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 2: 3 PILLARS OF NARRATION -->
+            <div class="eink-surface rounded-xl border eink-border p-5 space-y-4">
+              <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full eink-card border eink-border font-bold flex items-center justify-center text-xs">📐</span>
+                <h3 class="font-bold text-sm md:text-base">Narration রূপান্তরের ৩টি মৌলিক পরিবর্তন</h3>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+                <div class="p-3.5 rounded-lg eink-card border eink-border space-y-1.5">
+                  <strong class="text-sm block">১. লিংকার (Linker)</strong>
+                  <p class="opacity-80">
+                    • সাধারণ বাক্যে: <strong>that</strong><br>
+                    • হ্যাঁ/না প্রশ্নে: <strong>if / whether</strong><br>
+                    • ডব্লিউএইচ প্রশ্নে: <strong>Who/What/Where/Why</strong><br>
+                    • আদেশে/উপদেশে: <strong>to + $V_1$</strong>
+                  </p>
+                </div>
+
+                <div class="p-3.5 rounded-lg eink-card border eink-border space-y-1.5">
+                  <strong class="text-sm block">২. ব্যক্তি (Person) বদল</strong>
+                  <p class="opacity-80">
+                    • <strong>1st Person (I, we):</strong> বক্তা (Subject) অনুযায়ী বদলায়।<br>
+                    • <strong>2nd Person (you):</strong> শ্রোতা (Object) অনুযায়ী বদলায়।<br>
+                    • <strong>3rd Person (he, she, they):</strong> কোনো পরিবর্তন নেই!
+                  </p>
+                </div>
+
+                <div class="p-3.5 rounded-lg eink-card border eink-border space-y-1.5">
+                  <strong class="text-sm block">৩. কাল (Tense) এক ধাপ পেছানো</strong>
+                  <p class="opacity-80">
+                    যেহেতু ঘটনাটি অতীতে বলা হয়েছিল:<br>
+                    • $V_1$ (Present) $\rightarrow$ <strong>$V_2$ (Past)</strong><br>
+                    • $V_2$ (Past) $\rightarrow$ <strong>had + $V_3$ (Past Perfect)</strong><br>
+                    • can/will $\rightarrow$ <strong>could / would</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 3: SUPER TRAPS TABLE -->
+            <div class="eink-surface rounded-xl border eink-border p-5 space-y-3">
+              <h3 class="font-bold text-sm md:text-base">বিসিএস ও চাকরি পরীক্ষার ৩টি সুপার-ট্র্যাপ ⚠️</h3>
+              
+              <div class="space-y-3 text-xs">
+                <div class="p-3 rounded-lg eink-card border eink-border space-y-1">
+                  <strong class="block text-sm">ট্র্যাপ ১: চিরন্তন সত্য (Universal Truth) হলে Tense বদলাবে না!</strong>
+                  <p class="opacity-80"><em>Father said, "Man is mortal."</em> $\rightarrow$ <em>Father said that man <strong>is</strong> mortal.</em> (was mortal দিলে ভুল!)</p>
+                </div>
+
+                <div class="p-3 rounded-lg eink-card border eink-border space-y-1">
+                  <strong class="block text-sm">ট্র্যাপ ২: Had better থাকলে advised + to + $V_1$ (৪২তম বিসিএস)</strong>
+                  <p class="opacity-80"><em>He said, "You had better see a doctor."</em> $\rightarrow$ <em>He <strong>advised him to see</strong> a doctor.</em></p>
+                </div>
+
+                <div class="p-3 rounded-lg eink-card border eink-border space-y-1">
+                  <strong class="block text-sm">ট্র্যাপ ৩: পরোক্ষ উক্তিতে বাক্য সোজা (Assertive: Subject + Verb) হয়ে যায়!</strong>
+                  <p class="opacity-80"><em>"Where do you live?" he asked me.</em> $\rightarrow$ <em>He asked me where <strong>I lived</strong></em> (where did I live হবে না, প্রশ্নবোধক চিহ্নও উঠে যাবে)।</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 4: REAL EXAM QUESTION BANK (INTERACTIVE MCQ ENGINE) -->
+            <div class="space-y-4 pt-4 border-t eink-border">
+              <div class="flex items-center justify-between flex-wrap gap-2">
+                <h4 class="font-bold text-sm md:text-base flex items-center gap-2">
+                  <i data-lucide="award" class="w-5 h-5 text-emerald-600 dark:text-emerald-400"></i>
+                  <span>বিগত ২০ বছরের বিসিএস ও চাকরির আসল প্রশ্নব্যাংক (ইন্টারেক্টিভ টেস্ট)</span>
+                </h4>
+                <span class="text-[11px] opacity-75 border eink-border px-2 py-0.5 rounded">লাইভ টেস্ট মোড</span>
+              </div>
+
+              <!-- Question 1: 42nd BCS -->
+              <div id="q-nar-1" class="eink-card p-4 rounded-xl border eink-border space-y-3">
+                <div class="flex items-center justify-between gap-2 border-b eink-border pb-2">
+                  <span class="font-bold text-xs bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20">৪২তম বিসিএস (বিশেষ)</span>
+                  <button onclick="toggleHint('hint-nar-1')" class="text-[11px] font-semibold opacity-80 hover:opacity-100 flex items-center gap-1 border eink-border px-2 py-0.5 rounded">
+                    💡 সংকেত (Hint)
+                  </button>
+                </div>
+
+                <p class="font-semibold text-xs md:text-sm">
+                  ১. What is the correct indirect form of: <em>He said, "You had better see a doctor."</em>
+                </p>
+
+                <!-- Hint -->
+                <div id="hint-nar-1" class="hidden text-xs p-2.5 rounded-lg eink-surface border eink-border opacity-90">
+                  💡 <strong>সংকেত:</strong> 'Had better' দিয়ে কাউকে জোরালো উপদেশ (Advice) দেওয়া বোঝায়। তাই reporting verb হবে 'advised' এবং infinitive (to + verb) ব্যবহৃত হয়।
+                </div>
+
+                <!-- Options -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                  <button onclick="checkMCQ(this, 'q-nar-1', 'A', 'A')" data-opt="A" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (A) He advised him to see a doctor.
+                  </button>
+                  <button onclick="checkMCQ(this, 'q-nar-1', 'B', 'A')" data-opt="B" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (B) He advised that he should see a doctor.
+                  </button>
+                  <button onclick="checkMCQ(this, 'q-nar-1', 'C', 'A')" data-opt="C" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (C) He suggested that he had seen a doctor.
+                  </button>
+                  <button onclick="checkMCQ(this, 'q-nar-1', 'D', 'A')" data-opt="D" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (D) He proposed to see a doctor.
+                  </button>
+                </div>
+
+                <div class="quiz-feedback hidden text-xs"></div>
+                <div class="quiz-explanation hidden p-3 rounded-lg eink-surface border eink-border text-xs space-y-1">
+                  <strong>📝 বিস্তারিত ব্যাখ্যা:</strong> ডিরেক্ট স্পিচে 'had better' থাকলে তা কোনো কাজের জরুরি উপদেশ বোঝায়। ইনডাইরেক্টে 'advised + object + to + verb' ফরম্যাটে রূপান্তর হয়। তাই (A) <em>He advised him to see a doctor</em> শতভাগ সঠিক।
+                </div>
+              </div>
+
+              <!-- Question 2: 38th BCS -->
+              <div id="q-nar-2" class="eink-card p-4 rounded-xl border eink-border space-y-3">
+                <div class="flex items-center justify-between gap-2 border-b eink-border pb-2">
+                  <span class="font-bold text-xs bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20">৩৮তম বিসিএস</span>
+                  <button onclick="toggleHint('hint-nar-2')" class="text-[11px] font-semibold opacity-80 hover:opacity-100 flex items-center gap-1 border eink-border px-2 py-0.5 rounded">
+                    💡 সংকেত (Hint)
+                  </button>
+                </div>
+
+                <p class="font-semibold text-xs md:text-sm">
+                  ২. Which one is the correct indirect narration? — <em>"Why have you beaten my dog?" he said to me.</em>
+                </p>
+
+                <!-- Hint -->
+                <div id="hint-nar-2" class="hidden text-xs p-2.5 rounded-lg eink-surface border eink-border opacity-90">
+                  💡 <strong>সংকেত:</strong> কৈফিয়ত তলব করতে 'demanded of' বসে। বাক্যটি সাধারণ অ্যাসারটিভ (Subject + Verb) হবে এবং 'have beaten' অতীতে গিয়ে 'had beaten' হবে।
+                </div>
+
+                <!-- Options -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                  <button onclick="checkMCQ(this, 'q-nar-2', 'A', 'D')" data-opt="A" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (A) He demanded me why had I beaten his dog.
+                  </button>
+                  <button onclick="checkMCQ(this, 'q-nar-2', 'B', 'D')" data-opt="B" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (B) He asked me why I have had beaten his dog.
+                  </button>
+                  <button onclick="checkMCQ(this, 'q-nar-2', 'C', 'D')" data-opt="C" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (C) He enquired me why had I had beaten his dog.
+                  </button>
+                  <button onclick="checkMCQ(this, 'q-nar-2', 'D', 'D')" data-opt="D" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (D) He demanded of me why I had beaten his dog.
+                  </button>
+                </div>
+
+                <div class="quiz-feedback hidden text-xs"></div>
+                <div class="quiz-explanation hidden p-3 rounded-lg eink-surface border eink-border text-xs space-y-1">
+                  <strong>📝 বিস্তারিত ব্যাখ্যা:</strong> ডব্লিউএইচ ইন্টারোগেটিভ বাক্যে ইনডাইরেক্টে 'why' কনজাংশন হিসেবে বসে এবং বাক্যটি বর্ণনামূলক (Subject: I + Verb: had beaten) হয়। 'demanded of me' সঠিক থাকায় উত্তর (D)। অপশন (A)-তে 'why had I' ছিল, যা প্রশ্নবোধক অর্ডার হওয়ায় ভুল!
+                </div>
+              </div>
+
+              <!-- Question 3: 36th BCS -->
+              <div id="q-nar-3" class="eink-card p-4 rounded-xl border eink-border space-y-3">
+                <div class="flex items-center justify-between gap-2 border-b eink-border pb-2">
+                  <span class="font-bold text-xs bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20">৩৬তম বিসিএস</span>
+                  <button onclick="toggleHint('hint-nar-3')" class="text-[11px] font-semibold opacity-80 hover:opacity-100 flex items-center gap-1 border eink-border px-2 py-0.5 rounded">
+                    💡 সংকেত (Hint)
+                  </button>
+                </div>
+
+                <p class="font-semibold text-xs md:text-sm">
+                  ৩. Teacher said, <em>"The earth ______ round the sun."</em>
+                </p>
+
+                <!-- Hint -->
+                <div id="hint-nar-3" class="hidden text-xs p-2.5 rounded-lg eink-surface border eink-border opacity-90">
+                  💡 <strong>সংকেত:</strong> পৃথিবী সূর্যের চারদিকে ঘোরে—এটি একটি চিরন্তন সত্য (Universal Truth)। চিরন্তন সত্যের Tense কি কখনো বদলায়?
+                </div>
+
+                <!-- Options -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                  <button onclick="checkMCQ(this, 'q-nar-3', 'A', 'A')" data-opt="A" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (A) moves
+                  </button>
+                  <button onclick="checkMCQ(this, 'q-nar-3', 'B', 'A')" data-opt="B" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (B) moved
+                  </button>
+                  <button onclick="checkMCQ(this, 'q-nar-3', 'C', 'A')" data-opt="C" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (C) has moved
+                  </button>
+                  <button onclick="checkMCQ(this, 'q-nar-3', 'D', 'A')" data-opt="D" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (D) will be moving
+                  </button>
+                </div>
+
+                <div class="quiz-feedback hidden text-xs"></div>
+                <div class="quiz-explanation hidden p-3 rounded-lg eink-surface border eink-border text-xs space-y-1">
+                  <strong>📝 বিস্তারিত ব্যাখ্যা:</strong> রিপোর্টিং ভার্ব 'said' অতীত হলেও রিপোর্টেড স্পিচ চিরন্তন সত্য হওয়ায় Present Indefinite Tense (moves) অপরিবর্তিত থাকবে। তাই (A) সঠিক।
+                </div>
+              </div>
+
+              <!-- Question 4: 10th BCS -->
+              <div id="q-nar-4" class="eink-card p-4 rounded-xl border eink-border space-y-3">
+                <div class="flex items-center justify-between gap-2 border-b eink-border pb-2">
+                  <span class="font-bold text-xs bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20">১০ম বিসিএস</span>
+                  <button onclick="toggleHint('hint-nar-4')" class="text-[11px] font-semibold opacity-80 hover:opacity-100 flex items-center gap-1 border eink-border px-2 py-0.5 rounded">
+                    💡 সংকেত (Hint)
+                  </button>
+                </div>
+
+                <p class="font-semibold text-xs md:text-sm">
+                  ৪. Choose the correct sentence (Indirect Narration):
+                </p>
+
+                <!-- Hint -->
+                <div id="hint-nar-4" class="hidden text-xs p-2.5 rounded-lg eink-surface border eink-border opacity-90">
+                  💡 <strong>সংকেত:</strong> Yes/No প্রশ্নে লিংকার হিসেবে 'if' বসে এবং এরপরে Subject + Verb (he had passed) বসে।
+                </div>
+
+                <!-- Options -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                  <button onclick="checkMCQ(this, 'q-nar-4', 'A', 'B')" data-opt="A" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (A) I asked Javed had he passed.
+                  </button>
+                  <button onclick="checkMCQ(this, 'q-nar-4', 'B', 'B')" data-opt="B" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (B) I asked Javed if he had passed.
+                  </button>
+                  <button onclick="checkMCQ(this, 'q-nar-4', 'C', 'B')" data-opt="C" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (C) I asked Javed if you had passed.
+                  </button>
+                  <button onclick="checkMCQ(this, 'q-nar-4', 'D', 'B')" data-opt="D" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (D) I asked Javed that had he passed.
+                  </button>
+                </div>
+
+                <div class="quiz-feedback hidden text-xs"></div>
+                <div class="quiz-explanation hidden p-3 rounded-lg eink-surface border eink-border text-xs space-y-1">
+                  <strong>📝 বিস্তারিত ব্যাখ্যা:</strong> ইন্টারোগেটিভ ইনডাইরেক্টে 'that' বসে না, লিংকার হিসেবে 'if' বসে এবং সাবজেক্ট 'he'-এর পর 'had passed' বসে। তাই (B) শতভাগ সঠিক।
+                </div>
+              </div>
+
+              <!-- Question 5: Petrobangla & Bank Pattern -->
+              <div id="q-nar-5" class="eink-card p-4 rounded-xl border eink-border space-y-3">
+                <div class="flex items-center justify-between gap-2 border-b eink-border pb-2">
+                  <span class="font-bold text-xs bg-blue-500/10 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded border border-blue-500/20">পেট্রোবাংলা ও ব্যাংক প্যাটার্ন</span>
+                  <button onclick="toggleHint('hint-nar-5')" class="text-[11px] font-semibold opacity-80 hover:opacity-100 flex items-center gap-1 border eink-border px-2 py-0.5 rounded">
+                    💡 সংকেত (Hint)
+                  </button>
+                </div>
+
+                <p class="font-semibold text-xs md:text-sm">
+                  ৫. Choose the correct indirect speech: <em>My father said, "I'll have a cup of tea because I'm not hungry."</em>
+                </p>
+
+                <!-- Hint -->
+                <div id="hint-nar-5" class="hidden text-xs p-2.5 rounded-lg eink-surface border eink-border opacity-90">
+                  💡 <strong>সংকেত:</strong> 'will' অতীতে গিয়ে 'would' হবে এবং 'am not' অতীতে গিয়ে 'was not' (wasn't) হবে।
+                </div>
+
+                <!-- Options -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                  <button onclick="checkMCQ(this, 'q-nar-5', 'A', 'B')" data-opt="A" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (A) My father said that he will have a cup of tea because he wasn't hungry.
+                  </button>
+                  <button onclick="checkMCQ(this, 'q-nar-5', 'B', 'B')" data-opt="B" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (B) My father said that he would have a cup of tea because he wasn't hungry.
+                  </button>
+                  <button onclick="checkMCQ(this, 'q-nar-5', 'C', 'B')" data-opt="C" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (C) My father said that he would have had a cup of tea because he wasn't hungry.
+                  </button>
+                  <button onclick="checkMCQ(this, 'q-nar-5', 'D', 'B')" data-opt="D" class="quiz-option text-left p-2.5 rounded-lg border eink-border hover:bg-current/5 transition">
+                    (D) My father said that he had had a cup of tea because he wasn't hungry.
+                  </button>
+                </div>
+
+                <div class="quiz-feedback hidden text-xs"></div>
+                <div class="quiz-explanation hidden p-3 rounded-lg eink-surface border eink-border text-xs space-y-1">
+                  <strong>📝 বিস্তারিত ব্যাখ্যা:</strong> রিপোর্টিং ভার্ব 'said' অতীত হওয়ায় 'will' $\rightarrow$ 'would' হবে এবং 'I am not' $\rightarrow$ 'he wasn't' হবে। তাই (B) সঠিক উত্তর।
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        `
+      },
+
+        // ----------------------------------------------------
+        // BANGLA 2.1: SANDHI
+        // ----------------------------------------------------
         'bng-1': {
         category: 'বাংলা ব্যাকরণ উইং',
         dateCreated: '৩০ অক্টোবর ২০২৬',
@@ -1643,6 +1981,48 @@ ightarrow$ <strong>Participle</strong></li>
     }
 
     // E-Ink Day / Night Theme Toggle
+    
+    // Interactive Question Bank Engine (MCQ + Hint + Explanation)
+    function checkMCQ(btn, qId, selectedOpt, correctOpt) {
+      const container = document.getElementById(qId);
+      if (!container) return;
+      const options = container.querySelectorAll('.quiz-option');
+      const feedback = container.querySelector('.quiz-feedback');
+      const explanation = container.querySelector('.quiz-explanation');
+
+      options.forEach(opt => {
+        opt.disabled = true;
+        opt.classList.remove('border-emerald-500', 'bg-emerald-500/15', 'border-rose-500', 'bg-rose-500/15');
+        if (opt.dataset.opt === correctOpt) {
+          opt.classList.add('border-emerald-500', 'bg-emerald-500/15', 'font-bold');
+        }
+      });
+
+      if (selectedOpt === correctOpt) {
+        btn.classList.add('border-emerald-500', 'bg-emerald-500/20');
+        if (feedback) {
+          feedback.innerHTML = '<span class="text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-4 h-4"></i> সঠিক উত্তর! চমৎকার পেরেছেন!</span>';
+          feedback.classList.remove('hidden');
+        }
+      } else {
+        btn.classList.add('border-rose-500', 'bg-rose-500/20');
+        if (feedback) {
+          feedback.innerHTML = '<span class="text-rose-600 dark:text-rose-400 font-bold flex items-center gap-1.5"><i data-lucide="x-circle" class="w-4 h-4"></i> উত্তরটি ভুল হয়েছে। সঠিক উত্তরটি সবুজ রঙে চিহ্নিত করা হলো।</span>';
+          feedback.classList.remove('hidden');
+        }
+      }
+
+      if (explanation) {
+        explanation.classList.remove('hidden');
+      }
+      lucide.createIcons();
+    }
+
+    function toggleHint(hintId) {
+      const el = document.getElementById(hintId);
+      if (el) el.classList.toggle('hidden');
+    }
+
     function toggleEinkTheme() {
       const html = document.documentElement;
       const isNight = html.classList.contains('theme-eink-night');
