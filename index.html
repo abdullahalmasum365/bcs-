@@ -149,6 +149,15 @@
         </div>
       </div>
 
+      <!-- Center/Middle: Track Mode Dropdown Manager -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <label for="track-select" class="hidden md:inline text-xs font-bold opacity-80">মোড:</label>
+        <select id="track-select" onchange="switchTrack(this.value)" class="eink-card border-2 eink-border px-2.5 py-1.5 rounded-lg text-xs font-bold text-current focus:outline-none cursor-pointer">
+          <option value="job">🏛️ সরকারি চাকরি ও বিসিএস প্রস্তুতি</option>
+          <option value="teacher">👨‍🏫 শিক্ষকের স্পোকেন ও বোর্ড রাইটিং</option>
+        </select>
+      </div>
+
       <!-- Right: Controls -->
       <div class="flex items-center gap-2">
         <!-- Date Timeline Shortcut -->
@@ -184,6 +193,21 @@
     <!-- SIDEBAR: CURRICULUM TREE & SEARCH -->
     <aside id="sidebar" class="fixed md:sticky top-[53px] left-0 h-[calc(100vh-53px)] w-72 sm:w-80 eink-surface border-r eink-border flex flex-col z-30 transition-transform -translate-x-full md:translate-x-0 custom-scrollbar overflow-y-auto">
       
+      <!-- Track Switcher inside Sidebar -->
+      <div class="p-3 border-b eink-border eink-surface">
+        <span class="text-[10px] font-bold uppercase tracking-wider opacity-70 block mb-1.5">পোর্টাল ক্যাটাগরি সুইচ করুন:</span>
+        <div class="grid grid-cols-2 gap-1.5 p-1 rounded-lg eink-card border eink-border">
+          <button id="track-btn-job" onclick="switchTrack('job')" class="px-2 py-1.5 rounded text-[11px] font-bold transition flex items-center justify-center gap-1">
+            <span>🏛️</span>
+            <span>চাকরি প্রস্তুতি</span>
+          </button>
+          <button id="track-btn-teacher" onclick="switchTrack('teacher')" class="px-2 py-1.5 rounded text-[11px] font-bold transition flex items-center justify-center gap-1">
+            <span>👨‍🏫</span>
+            <span>টিচার্স স্পোকেন</span>
+          </button>
+        </div>
+      </div>
+
       <!-- Search Input -->
       <div class="p-3 border-b eink-border sticky top-0 eink-surface z-10">
         <div class="relative">
@@ -196,7 +220,7 @@
       <nav class="p-3 space-y-4 flex-1 text-xs" id="curriculum-list">
 
         <!-- TIMELINE LOG LINK -->
-        <div class="topic-group">
+        <div class="topic-group" data-track="job">
           <button onclick="loadLesson('timeline-log')" class="lesson-link w-full text-left px-3 py-2 rounded-lg flex items-center justify-between font-bold border eink-border eink-card" data-id="timeline-log">
             <span class="flex items-center gap-2">
               <i data-lucide="history" class="w-4 h-4"></i>
@@ -207,19 +231,27 @@
         </div>
 
         <!-- CATEGORY: TEACHER'S SPOKEN & BOARD MASTERCLASS -->
-        <div class="topic-group space-y-1">
+        <div class="topic-group space-y-1" data-track="teacher">
           <div class="px-2 py-1 font-bold text-[11px] uppercase tracking-wider opacity-75 flex items-center justify-between border-b eink-border pb-1">
             <span>🎯 শিক্ষকের স্পোকেন ও বোর্ড রাইটিং</span>
-            <span class="text-[10px] opacity-75">স্পেশাল উইং</span>
+            <span class="text-[10px] opacity-75">মাস্টারক্লাস</span>
           </div>
           <button onclick="loadLesson('teacher-spoken-master')" class="lesson-link w-full text-left px-3 py-2 rounded-lg flex items-center gap-2 font-medium border border-transparent hover:border-current/20" data-id="teacher-spoken-master">
             <span class="shrink-0">●</span>
-            <span class="truncate">১.০: টেন্স ইঞ্জিন, ট্রিকি ব্যতিক্রম ও বোর্ড বানান গাইড</span>
+            <span class="truncate">১.০: টেন্স ইঞ্জিন, ট্রিকি ব্যতিক্রম ও বোর্ড বানান</span>
+          </button>
+          <button onclick="loadLesson('teacher-question-engine')" class="lesson-link w-full text-left px-3 py-2 rounded-lg flex items-center gap-2 font-medium border border-transparent hover:border-current/20" data-id="teacher-question-engine">
+            <span class="shrink-0">●</span>
+            <span class="truncate">১.১: ক্লাসরুম প্রশ্ন ইঞ্জিন (QUASM ও WH-প্রশ্ন)</span>
+          </button>
+          <button onclick="loadLesson('teacher-classroom-daily')" class="lesson-link w-full text-left px-3 py-2 rounded-lg flex items-center gap-2 font-medium border border-transparent hover:border-current/20" data-id="teacher-classroom-daily">
+            <span class="shrink-0">●</span>
+            <span class="truncate">১.২: ক্লাসরুমের দৈনন্দিন ৪০টি অপরিহার্য বাক্য</span>
           </button>
         </div>
 
         <!-- CATEGORY: ENGLISH FOUNDATION ZERO -->
-        <div class="topic-group space-y-1">
+        <div class="topic-group space-y-1" data-track="job">
           <div class="px-2 py-1 font-bold text-[11px] uppercase tracking-wider opacity-75 flex items-center justify-between border-b eink-border pb-1">
             <span>🌱 ইংরেজি বেসিক জিরো লেভেল</span>
             <span class="text-[10px] opacity-75">ভিত্তি</span>
@@ -235,7 +267,7 @@
         </div>
 
         <!-- CATEGORY: ENGLISH ADVANCED GRAMMAR -->
-        <div class="topic-group space-y-1">
+        <div class="topic-group space-y-1" data-track="job">
           <div class="px-2 py-1 font-bold text-[11px] uppercase tracking-wider opacity-75 flex items-center justify-between border-b eink-border pb-1">
             <span>🇬🇧 ইংরেজি কোর গ্রামার (বিসিএস ও জব)</span>
             <span class="text-[10px] opacity-75">৩৫ মার্কস</span>
@@ -267,7 +299,7 @@
         </div>
 
         <!-- CATEGORY: BANGLA -->
-        <div class="topic-group space-y-1">
+        <div class="topic-group space-y-1" data-track="job">
           <div class="px-2 py-1 font-bold text-[11px] uppercase tracking-wider opacity-75 flex items-center justify-between border-b eink-border pb-1">
             <span>🇧🇩 বাংলা উইং (ব্যাকরণ ও সাহিত্য)</span>
             <span class="text-[10px] opacity-75">৩৫ মার্কস</span>
@@ -287,7 +319,7 @@
         </div>
 
         <!-- CATEGORY: GENERAL MATH -->
-        <div class="topic-group space-y-1">
+        <div class="topic-group space-y-1" data-track="job">
           <div class="px-2 py-1 font-bold text-[11px] uppercase tracking-wider opacity-75 flex items-center justify-between border-b eink-border pb-1">
             <span>📐 সাধারণ গণিত ও মানসিক দক্ষতা</span>
             <span class="text-[10px] opacity-75">৩০ মার্কস</span>
@@ -303,7 +335,7 @@
         </div>
 
         <!-- CATEGORY: PETRO & ENERGY -->
-        <div class="topic-group space-y-1">
+        <div class="topic-group space-y-1" data-track="job">
           <div class="px-2 py-1 font-bold text-[11px] uppercase tracking-wider opacity-75 flex items-center justify-between border-b eink-border pb-1">
             <span>🛢️ পেট্রোবাংলা ও জ্বালানি ভল্ট</span>
             <span class="text-[10px] opacity-75">বুলেটিন</span>
@@ -315,7 +347,7 @@
         </div>
 
         <!-- CATEGORY: CORE EEE -->
-        <div class="topic-group space-y-1">
+        <div class="topic-group space-y-1" data-track="job">
           <div class="px-2 py-1 font-bold text-[11px] uppercase tracking-wider opacity-75 flex items-center justify-between border-b eink-border pb-1">
             <span>⚡ EEE কোর রিটেন উইং</span>
             <span class="text-[10px] opacity-75">লিখিত</span>
@@ -2169,6 +2201,188 @@ ightarrow$ <strong>Participle</strong></li>
           </div>
         `
       },
+
+
+      // ----------------------------------------------------
+      // TEACHER'S QUESTION ENGINE
+      // ----------------------------------------------------
+      'teacher-question-engine': {
+        category: 'শিক্ষকের স্পোকেন ও ক্লাসরুম ইংরেজি',
+        dateCreated: '৩১ অক্টোবর ২০২৬',
+        lastUpdated: '৩১ অক্টোবর ২০২৬',
+        badge: 'QUASM ফর্মুলা ও WH-প্রশ্ন মাস্টারক্লাস',
+        title: '১.১: ক্লাসরুম প্রশ্ন ইঞ্জিন (The Question Making Formula - QUASM ও WH-প্রশ্ন)',
+        readTime: '১২ মিনিট পাঠ',
+        html: `
+          <div class="space-y-6 text-xs sm:text-sm">
+            <div class="eink-surface p-5 rounded-xl border eink-border space-y-3">
+              <span class="px-2 py-0.5 rounded bg-current/10 font-bold text-xs uppercase tracking-wider">প্রশ্ন ইঞ্জিন</span>
+              <h3 class="font-bold text-base">❓ ক্লাসে প্রশ্ন করার অটোমেটিক সিনট্যাক্স কম্পাইলার</h3>
+              <p class="opacity-90 leading-relaxed">
+                একজন শিক্ষককে ক্লাসে প্রতিনিয়ত শিক্ষার্থীদের প্রশ্ন করতে হয়। সাধারণ বাক্যে সমস্যা না হলেও প্রশ্ন করার সময় অনেকেই অক্সিলারি ভার্ব ও সাবজেক্টের অবস্থান উল্টে ফেলেন (যেমন: <em>"Why you wrote this?"</em> বলে ফেলেন)। নিচের <strong>QUASM রুল</strong> ফলো করলে প্রশ্ন তৈরিতে জীবনে আর কখনো ভুল হবে না।
+              </p>
+            </div>
+
+            <div class="eink-surface p-5 rounded-xl border eink-border space-y-4">
+              <h4 class="font-bold text-base border-b eink-border pb-2 flex items-center justify-between">
+                <span>১. দ্য গোল্ডেন কোশ্চেন ফর্মুলা (QUASM Rule)</span>
+                <span class="text-xs font-mono opacity-70">Qu - A - S - M</span>
+              </h4>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs">
+                <div class="p-2.5 rounded-lg eink-card border eink-border">
+                  <span class="font-bold text-sm block">Qu</span>
+                  <span class="text-[11px] opacity-75">Question Word</span>
+                  <strong class="block mt-1 font-mono">Why / What</strong>
+                </div>
+                <div class="p-2.5 rounded-lg eink-card border eink-border">
+                  <span class="font-bold text-sm block">A</span>
+                  <span class="text-[11px] opacity-75">Auxiliary</span>
+                  <strong class="block mt-1 font-mono">are / did / have</strong>
+                </div>
+                <div class="p-2.5 rounded-lg eink-card border eink-border">
+                  <span class="font-bold text-sm block">S</span>
+                  <span class="text-[11px] opacity-75">Subject</span>
+                  <strong class="block mt-1 font-mono">you / he</strong>
+                </div>
+                <div class="p-2.5 rounded-lg eink-card border eink-border">
+                  <span class="font-bold text-sm block">M</span>
+                  <span class="text-[11px] opacity-75">Main Verb</span>
+                  <strong class="block mt-1 font-mono">doing / use</strong>
+                </div>
+              </div>
+              <div class="p-3 rounded-lg eink-card border eink-border text-xs font-mono space-y-1">
+                <p>✔️ <strong>Why (Qu) + did (A) + you (S) + use (M) + this while loop?</strong></p>
+                <p>✔️ <strong>What (Qu) + does (A) + this function (S) + return (M)?</strong></p>
+              </div>
+            </div>
+
+            <div class="eink-surface p-5 rounded-xl border eink-border space-y-4">
+              <h4 class="font-bold text-base border-b eink-border pb-2">২. ক্লাসরুমের দুটি প্রধান প্রশ্ন ধরন</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                <div class="p-3 rounded-lg eink-card border eink-border space-y-2">
+                  <strong class="font-bold text-sm block border-b eink-border pb-1">ক. Yes / No প্রশ্ন (A + S + M)</strong>
+                  <p class="opacity-80">অক্সিলারি দিয়ে শুরু হয়। উত্তর কেবল হ্যাঁ বা না:</p>
+                  <ul class="list-disc list-inside space-y-1 opacity-90">
+                    <li><em>"<strong>Do you understand</strong> the concept?"</em></li>
+                    <li><em>"<strong>Are you running</strong> the code now?"</em></li>
+                    <li><em>"<strong>Have you submitted</strong> the assignment?"</em></li>
+                    <li><em>"<strong>Did you test</strong> the boundary conditions?"</em></li>
+                    <li><em>"<strong>Can everyone see</strong> the whiteboard?"</em></li>
+                  </ul>
+                </div>
+                <div class="p-3 rounded-lg eink-card border eink-border space-y-2">
+                  <strong class="font-bold text-sm block border-b eink-border pb-1">খ. WH-প্রশ্ন (Qu + A + S + M)</strong>
+                  <p class="opacity-80">তথ্য জানতে WH-word দিয়ে শুরু হয়:</p>
+                  <ul class="list-disc list-inside space-y-1 opacity-90">
+                    <li><em>"<strong>Where did you declare</strong> this variable?"</em></li>
+                    <li><em>"<strong>Why is</strong> the compiler throwing a syntax error?"</em></li>
+                    <li><em>"<strong>How does</strong> quicksort partition the array?"</em></li>
+                    <li><em>"<strong>Which method</strong> should we call here?"</em></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="eink-surface p-5 rounded-xl border eink-border space-y-4">
+              <h4 class="font-bold text-base border-b eink-border pb-2">⚡ প্রশ্ন তৈরির ২টি মারাত্মক ট্রিকি ফাঁদ (Traps)</h4>
+              <div class="space-y-3 text-xs">
+                <div class="p-3 rounded-lg eink-card border eink-border space-y-1.5">
+                  <strong class="font-bold text-sm block">ফাঁদ ১: Who নিজেই যখন সাবজেক্ট (কোনো Do/Did বসে না!)</strong>
+                  <p class="opacity-85">যদি জানতে চান কাজটি কে করেছে, তাহলে সাধারণ নিয়মের Did বসবে না। সরাসরি অতীত রূপ ($V_2$) বসবে:</p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 font-mono">
+                    <div class="p-2 rounded bg-red-500/10 border border-red-500/30 text-red-700 dark:text-red-300">
+                      ❌ Who did write this program?<br>
+                      ❌ What did happen in line 5?
+                    </div>
+                    <div class="p-2 rounded bg-green-500/10 border border-green-500/30 text-green-700 dark:text-green-300">
+                      ✔️ <strong>Who wrote this program?</strong><br>
+                      ✔️ <strong>What happened in line 5?</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-3 rounded-lg eink-card border eink-border space-y-1.5">
+                  <strong class="font-bold text-sm block">ফাঁদ ২: ইনডাইরেক্ট বা ভদ্র প্রশ্ন (Embedded Question)</strong>
+                  <p class="opacity-85">"Could you tell me..." বা "Do you know..." দিয়ে শুরু হলে ভেতরের প্রশ্নটি উল্টে সাধারণ বাক্য (Subject + Verb) হয়ে যায়:</p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 font-mono">
+                    <div class="p-2 rounded bg-red-500/10 border border-red-500/30 text-red-700 dark:text-red-300">
+                      ❌ Could you tell me where is the lab?<br>
+                      ❌ Do you know why did the code crash?
+                    </div>
+                    <div class="p-2 rounded bg-green-500/10 border border-green-500/30 text-green-700 dark:text-green-300">
+                      ✔️ <strong>Could you tell me where the lab is?</strong><br>
+                      ✔️ <strong>Do you know why the code crashed?</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+      },
+
+      // ----------------------------------------------------
+      // TEACHER'S CLASSROOM DAILY 40
+      // ----------------------------------------------------
+      'teacher-classroom-daily': {
+        category: 'শিক্ষকের স্পোকেন ও ক্লাসরুম ইংরেজি',
+        dateCreated: '৩১ অক্টোবর ২০২৬',
+        lastUpdated: '৩১ অক্টোবর ২০২৬',
+        badge: 'ক্লাস শুরু থেকে শেষ পর্যন্ত ফ্লুয়েন্সি গাইড',
+        title: '১.২: ক্লাসরুমের দৈনন্দিন ৪০টি অপরিহার্য বাক্য (Classroom Daily 40)',
+        readTime: '১৫ মিনিট পাঠ',
+        html: `
+          <div class="space-y-6 text-xs sm:text-sm">
+            <div class="eink-surface p-5 rounded-xl border eink-border space-y-3">
+              <span class="px-2 py-0.5 rounded bg-current/10 font-bold text-xs uppercase tracking-wider">রেডি-টু-ইউজ বাক্যভাণ্ডার</span>
+              <h3 class="font-bold text-base">🗣️ ক্লাসের শুরু থেকে শেষ: শিক্ষকের দৈনন্দিন ৪০টি বাক্য</h3>
+              <p class="opacity-90 leading-relaxed">
+                মুখে চিন্তা না করে স্বাভাবিকভাবে ইংরেজি বলতে এই বাক্যগুলো নিয়মিত রিভিশন দিন:
+              </p>
+            </div>
+
+            <div class="eink-surface p-5 rounded-xl border eink-border space-y-3">
+              <h4 class="font-bold text-sm border-b eink-border pb-1">১. ক্লাসে ঢোকা ও উপস্থিতি (Warm-up & Attendance)</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                <div class="p-2 rounded eink-card border eink-border">1. <em>"Good morning, everyone. Please take your seats."</em></div>
+                <div class="p-2 rounded eink-card border eink-border">2. <em>"Who is absent today?"</em></div>
+                <div class="p-2 rounded eink-card border eink-border">3. <em>"Did everyone attend the last lecture?"</em></div>
+                <div class="p-2 rounded eink-card border eink-border">4. <em>"Let's do a quick recap of our previous class."</em></div>
+              </div>
+            </div>
+
+            <div class="eink-surface p-5 rounded-xl border eink-border space-y-3">
+              <h4 class="font-bold text-sm border-b eink-border pb-1">২. হোয়াইটবোর্ড ও প্রজেক্টর পরিচালনা</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                <div class="p-2 rounded eink-card border eink-border">5. <em>"Could everyone please look at the whiteboard?"</em></div>
+                <div class="p-2 rounded eink-card border eink-border">6. <em>"Is the text visible from the back row?"</em></div>
+                <div class="p-2 rounded eink-card border eink-border">7. <em>"Please note down this flowchart in your copies."</em></div>
+                <div class="p-2 rounded eink-card border eink-border">8. <em>"Have you finished copying? May I clean the board?"</em></div>
+              </div>
+            </div>
+
+            <div class="eink-surface p-5 rounded-xl border eink-border space-y-3">
+              <h4 class="font-bold text-sm border-b eink-border pb-1">৩. কোডিং ল্যাব ও এরর ডিবাগিং ইনস্ট্রাকশনস</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                <div class="p-2 rounded eink-card border eink-border">9. <em>"Open your IDE and create a new project file."</em></div>
+                <div class="p-2 rounded eink-card border eink-border">10. <em>"Compile the code and check the console output."</em></div>
+                <div class="p-2 rounded eink-card border eink-border">11. <em>"Who has encountered a syntax error?"</em></div>
+                <div class="p-2 rounded eink-card border eink-border">12. <em>"Make sure you save your work before closing the editor."</em></div>
+              </div>
+            </div>
+
+            <div class="eink-surface p-5 rounded-xl border eink-border space-y-3">
+              <h4 class="font-bold text-sm border-b eink-border pb-1">৪. ক্লাস সমাপ্তি ও অ্যাসাইনমেন্ট ঘোষণা</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                <div class="p-2 rounded eink-card border eink-border">13. <em>"That brings us to the end of today's lesson."</em></div>
+                <div class="p-2 rounded eink-card border eink-border">14. <em>"Your assignment is due next Sunday."</em></div>
+                <div class="p-2 rounded eink-card border eink-border">15. <em>"Does anyone have any last-minute questions?"</em></div>
+                <div class="p-2 rounded eink-card border eink-border">16. <em>"Have a great day, see you in the next class."</em></div>
+              </div>
+            </div>
+          </div>
+        `
+      },
     };
 
     // Render Selected Lesson
@@ -2298,6 +2512,56 @@ ightarrow$ <strong>Participle</strong></li>
       lucide.createIcons();
     }
 
+    function switchTrack(track) {
+      localStorage.setItem('selected_study_track', track);
+      
+      // Update Top Dropdown
+      const select = document.getElementById('track-select');
+      if (select) select.value = track;
+
+      // Update Sidebar Toggle Buttons
+      const btnJob = document.getElementById('track-btn-job');
+      const btnTeacher = document.getElementById('track-btn-teacher');
+      if (btnJob && btnTeacher) {
+        if (track === 'teacher') {
+          btnTeacher.className = 'px-2 py-1.5 rounded text-[11px] font-bold transition flex items-center justify-center gap-1 eink-card border eink-border shadow-sm';
+          btnJob.className = 'px-2 py-1.5 rounded text-[11px] font-medium opacity-70 hover:opacity-100 transition flex items-center justify-center gap-1';
+        } else {
+          btnJob.className = 'px-2 py-1.5 rounded text-[11px] font-bold transition flex items-center justify-center gap-1 eink-card border eink-border shadow-sm';
+          btnTeacher.className = 'px-2 py-1.5 rounded text-[11px] font-medium opacity-70 hover:opacity-100 transition flex items-center justify-center gap-1';
+        }
+      }
+
+      // Filter Sidebar Categories (topic-groups)
+      document.querySelectorAll('.topic-group').forEach(group => {
+        const groupTrack = group.dataset.track || 'job';
+        if (groupTrack === track) {
+          group.style.display = 'block';
+        } else {
+          group.style.display = 'none';
+        }
+      });
+
+      // Update Header Subtitle
+      const subtitle = document.querySelector('header p.eink-text-muted');
+      if (subtitle) {
+        if (track === 'teacher') {
+          subtitle.innerText = 'শিক্ষকের স্পোকেন কনফিডেন্স ও নির্ভুল বোর্ড রাইটিং পোর্টাল';
+        } else {
+          subtitle.innerText = 'তারিখভিত্তিক ধারাবাহিক সরকারি চাকরি ও বিসিএস প্রস্তুতি পোর্টাল';
+        }
+      }
+
+      // If active lesson belongs to different track, switch lesson
+      const activeId = localStorage.getItem('active_lesson_id') || '';
+      const isTeacherLesson = activeId.startsWith('teacher-');
+      if (track === 'teacher' && !isTeacherLesson) {
+        loadLesson('teacher-spoken-master');
+      } else if (track === 'job' && isTeacherLesson) {
+        loadLesson('timeline-log');
+      }
+    }
+
     function toggleHint(hintId) {
       const el = document.getElementById(hintId);
       if (el) el.classList.toggle('hidden');
@@ -2335,7 +2599,10 @@ ightarrow$ <strong>Participle</strong></li>
         document.getElementById('theme-text').innerText = 'E-Ink Day';
       }
 
-      const lastLesson = localStorage.getItem('active_lesson_id') || 'timeline-log';
+      const savedTrack = localStorage.getItem('selected_study_track') || 'job';
+      switchTrack(savedTrack);
+
+      const lastLesson = localStorage.getItem('active_lesson_id') || (savedTrack === 'teacher' ? 'teacher-spoken-master' : 'timeline-log');
       loadLesson(lastLesson);
       lucide.createIcons();
     });
