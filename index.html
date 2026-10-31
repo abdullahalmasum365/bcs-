@@ -206,6 +206,18 @@
           </button>
         </div>
 
+        <!-- CATEGORY: TEACHER'S SPOKEN & BOARD MASTERCLASS -->
+        <div class="topic-group space-y-1">
+          <div class="px-2 py-1 font-bold text-[11px] uppercase tracking-wider opacity-75 flex items-center justify-between border-b eink-border pb-1">
+            <span>🎯 শিক্ষকের স্পোকেন ও বোর্ড রাইটিং</span>
+            <span class="text-[10px] opacity-75">স্পেশাল উইং</span>
+          </div>
+          <button onclick="loadLesson('teacher-spoken-master')" class="lesson-link w-full text-left px-3 py-2 rounded-lg flex items-center gap-2 font-medium border border-transparent hover:border-current/20" data-id="teacher-spoken-master">
+            <span class="shrink-0">●</span>
+            <span class="truncate">১.০: টেন্স ইঞ্জিন, ট্রিকি ব্যতিক্রম ও বোর্ড বানান গাইড</span>
+          </button>
+        </div>
+
         <!-- CATEGORY: ENGLISH FOUNDATION ZERO -->
         <div class="topic-group space-y-1">
           <div class="px-2 py-1 font-bold text-[11px] uppercase tracking-wider opacity-75 flex items-center justify-between border-b eink-border pb-1">
@@ -1887,8 +1899,276 @@ ightarrow$ <strong>Participle</strong></li>
             </div>
           </div>
         `
-      }
+      },
 
+      // ----------------------------------------------------
+      // TEACHER'S SPOKEN & WHITEBOARD MASTERCLASS
+      // ----------------------------------------------------
+      'teacher-spoken-master': {
+        category: 'শিক্ষকের স্পোকেন ও ক্লাসরুম ইংরেজি',
+        dateCreated: '৩১ অক্টোবর ২০২৬',
+        lastUpdated: '৩১ অক্টোবর ২০২৬',
+        badge: 'টেন্স ইঞ্জিন, ট্রিকি ব্যতিক্রম ও বানান মাস্টারক্লাস',
+        title: '১.০: ক্লাসরুম স্পোকেন টেন্স, ব্যাকরণিক ব্যতিক্রম (Rule Breakers) ও হোয়াইটবোর্ড বানান গাইড',
+        readTime: '১৫ মিনিট পাঠ',
+        html: `
+          <div class="space-y-6 text-xs sm:text-sm">
+
+            <!-- INTRO BOX -->
+            <div class="eink-surface p-5 rounded-xl border eink-border space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded bg-current/10 font-bold text-xs uppercase tracking-wider">স্পেশাল গাইড</span>
+                <span class="font-bold text-base">👨‍🏫 শিক্ষকের স্পোকেন কনফিডেন্স ও নির্ভুল বোর্ড রাইটিং</span>
+              </div>
+              <p class="opacity-90 leading-relaxed">
+                একজন শিক্ষকের প্রধান ভীতি থাকে দুটি জায়গায়: <strong>কথা বলার সময় টেন্সের দ্বিধাদ্বন্দ্ব (বিশেষ করে Have/Has/Had)</strong> এবং <strong>শিক্ষার্থীদের সামনে বোর্ডে লেখার সময় বানান ভুল হওয়ার আতঙ্ক</strong>। 
+                এখানে মূল নিয়মের পাশাপাশি এমন সব <strong>ট্রিকি ব্যতিক্রম (Exceptions)</strong> তুলে ধরা হয়েছে যেগুলো সাধারণ ব্যাকরণ বই সরাসরি শেখায় না কিন্তু বাস্তব স্পোকেনে প্রতিনিয়ত বিভ্রান্তি তৈরি করে।
+              </p>
+            </div>
+
+            <!-- MODULE 1: THE CORE TENSE ENGINE -->
+            <div class="eink-surface p-5 rounded-xl border eink-border space-y-4">
+              <h3 class="font-bold text-base border-b eink-border pb-2 flex items-center justify-between">
+                <span>১. ক্লাসরুম টেন্স ইঞ্জিন (The 4 Engine Tenses)</span>
+                <span class="text-xs font-normal opacity-70">দৈনন্দিন স্পোকেনের ৯২%</span>
+              </h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-3.5 rounded-lg eink-card border eink-border space-y-1.5">
+                  <span class="font-bold text-xs px-2 py-0.5 rounded bg-current/10 inline-block">১. প্রেজেন্ট সিম্পল (Present Simple)</span>
+                  <p class="font-mono text-xs font-bold text-current opacity-90">$S + V_1 / V_{s/es} + O$</p>
+                  <p class="text-xs opacity-80">দৈনন্দিন রুটিন, অভ্যাস ও সাধারণ সত্য বোঝাতে।</p>
+                  <ul class="text-xs list-disc list-inside opacity-90 space-y-1">
+                    <li><em>"I teach Computer Science."</em> (অভ্যাস)</li>
+                    <li><em>"Does anyone have a question?"</em> (প্রশ্ন)</li>
+                  </ul>
+                </div>
+
+                <div class="p-3.5 rounded-lg eink-card border eink-border space-y-1.5">
+                  <span class="font-bold text-xs px-2 py-0.5 rounded bg-current/10 inline-block">২. প্রেজেন্ট কন্টিনিউয়াস (Continuous)</span>
+                  <p class="font-mono text-xs font-bold text-current opacity-90">$S + am/is/are + V_{ing} + O$</p>
+                  <p class="text-xs opacity-80">চোখের সামনে এই মুহূর্তে যা চলমান।</p>
+                  <ul class="text-xs list-disc list-inside opacity-90 space-y-1">
+                    <li><em>"I am explaining the algorithm."</em></li>
+                    <li><em>"Are you writing the code?"</em></li>
+                  </ul>
+                </div>
+
+                <div class="p-3.5 rounded-lg eink-card border eink-border space-y-1.5">
+                  <span class="font-bold text-xs px-2 py-0.5 rounded bg-current/10 inline-block">৩. প্রেজেন্ট পারফেক্ট (Present Perfect)</span>
+                  <p class="font-mono text-xs font-bold text-current opacity-90">$S + have/has + V_3 + O$</p>
+                  <p class="text-xs opacity-80">কাজটি অতীতে শেষ কিন্তু ক্লাসে তার রেজাল্ট বর্তমান।</p>
+                  <ul class="text-xs list-disc list-inside opacity-90 space-y-1">
+                    <li><em>"Who has finished the task?"</em> (কার খাতা প্রস্তুত?)</li>
+                    <li><em>"I have saved the project."</em></li>
+                  </ul>
+                </div>
+
+                <div class="p-3.5 rounded-lg eink-card border eink-border space-y-1.5">
+                  <span class="font-bold text-xs px-2 py-0.5 rounded bg-current/10 inline-block">৪. পাস্ট সিম্পল (Past Simple)</span>
+                  <p class="font-mono text-xs font-bold text-current opacity-90">$S + V_2 + O$ (বা Did + $V_1$)</p>
+                  <p class="text-xs opacity-80">অতীতের সমাপ্ত ঘটনা (Yesterday, last class)।</p>
+                  <ul class="text-xs list-disc list-inside opacity-90 space-y-1">
+                    <li><em>"I explained this yesterday."</em></li>
+                    <li><em>"Did you understand the logic?"</em></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- MODULE 2: TRICKY EXCEPTIONS & RULE BREAKERS -->
+            <div class="eink-surface p-5 rounded-xl border eink-border space-y-4">
+              <h3 class="font-bold text-base border-b eink-border pb-2 flex items-center justify-between">
+                <span>⚡ ট্রিকি ব্যতিক্রম ও ব্যাকরণের নিয়মের বাইরের বিষয় (Rule Breakers)</span>
+                <span class="text-xs font-normal opacity-70">সবচেয়ে গুরুত্বপূর্ণ</span>
+              </h3>
+              
+              <div class="space-y-3">
+                <!-- EXCEPTION 1 -->
+                <div class="p-3.5 rounded-lg eink-card border eink-border space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-xs px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-900 dark:text-amber-200">ব্যতিক্রম ১</span>
+                    <strong class="font-bold text-sm">Stative Verbs: চোখের সামনে ঘটলেও কখনো 'ing' হয় না!</strong>
+                  </div>
+                  <p class="text-xs opacity-85 leading-relaxed">
+                    যেসব ভার্বে কোনো শারীরিক অঙ্গভঙ্গি বা ফিজিক্যাল মুভমেন্ট নেই (মনের অবস্থা, অনুভূতি, বোধশক্তি), তাদের কন্টিনিউয়াস (ing) করা যায় না। এগুলো চলমান মুহূর্তে ঘটলেও <strong>সবসময় Present Simple</strong>-এ বলতে হয়:
+                  </p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
+                    <div class="p-2 rounded bg-red-500/10 border border-red-500/30 text-red-700 dark:text-red-300">
+                      ❌ <em>I am understanding your problem.</em><br>
+                      ❌ <em>Are you knowing this language?</em><br>
+                      ❌ <em>The system is needing memory.</em>
+                    </div>
+                    <div class="p-2 rounded bg-green-500/10 border border-green-500/30 text-green-700 dark:text-green-300">
+                      ✔️ <strong>I understand your problem.</strong><br>
+                      ✔️ <strong>Do you know this language?</strong><br>
+                      ✔️ <strong>The system needs memory.</strong>
+                    </div>
+                  </div>
+                  <p class="text-[11px] opacity-75">
+                    <strong>গুরুত্বপূর্ণ Stative Verbs তালিকা:</strong> <em>know, understand, remember, believe, need, want, prefer, see, hear, belong.</em>
+                  </p>
+                </div>
+
+                <!-- EXCEPTION 2 -->
+                <div class="p-3.5 rounded-lg eink-card border eink-border space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-xs px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-900 dark:text-amber-200">ব্যতিক্রম ২</span>
+                    <strong class="font-bold text-sm">'Have'-এর দ্বৈত চরিত্র (Auxiliary বনাম Possession Main Verb)</strong>
+                  </div>
+                  <p class="text-xs opacity-85 leading-relaxed">
+                    'Have' যখন সাহায্যকারী ভার্ব, তখন সে $V_3$ নেয়। কিন্তু যখন 'Have' দিয়ে <strong>মালিকানা বা নিজের কাছে থাকা</strong> বোঝায়, তখন প্রশ্ন বা না-বোধক করতে <strong>Do / Does</strong> ধার করতে হয়:
+                  </p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                    <div class="p-2 rounded eink-surface border eink-border">
+                      <span class="font-bold block mb-1">অক্সিলারি হিসেবে (Present Perfect):</span>
+                      <p>✔️ <em>"Have you written the code?"</em></p>
+                      <p>✔️ <em>"I haven't tested it yet."</em></p>
+                    </div>
+                    <div class="p-2 rounded eink-surface border eink-border">
+                      <span class="font-bold block mb-1">মালিকানা হিসেবে (Main Verb):</span>
+                      <p>❌ <em>"Have you any doubt?"</em> (পুরনো ও অপ্রচলিত)</p>
+                      <p>✔️ <strong>"Do you have any questions?"</strong> (আধুনিক ও সঠিক)</p>
+                      <p>✔️ <strong>"I do not have enough time."</strong></p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- EXCEPTION 3 -->
+                <div class="p-3.5 rounded-lg eink-card border eink-border space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-xs px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-900 dark:text-amber-200">ব্যতিক্রম ৩</span>
+                    <strong class="font-bold text-sm">ভবিষ্যতের ঘটনা কিন্তু বলা হয় প্রেজেন্ট সিম্পলে (Timetable Future)</strong>
+                  </div>
+                  <p class="text-xs opacity-85 leading-relaxed">
+                    যদি কোনো অনুষ্ঠান বা পরীক্ষা পূর্বনির্ধারিত রুটিন অনুযায়ী ভবিষ্যতে ঘটবে বোঝায়, সেখানে <em>Will</em> ব্যবহার করার দরকার নেই; বরং <strong>Present Simple</strong> ব্যবহার করাই বেশি স্বাভাবিক:
+                  </p>
+                  <div class="p-2 rounded eink-surface border eink-border text-xs space-y-1 font-mono">
+                    <p>✔️ <strong>The lab exam starts tomorrow at 10 AM.</strong> (পরীক্ষা কাল সকালে শুরু হবে)</p>
+                    <p>✔️ <strong>Our next semester begins next Monday.</strong> (পরের সেমিস্টার সোমবারে শুরু হবে)</p>
+                  </div>
+                </div>
+
+                <!-- EXCEPTION 4 -->
+                <div class="p-3.5 rounded-lg eink-card border eink-border space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-xs px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-900 dark:text-amber-200">ব্যতিক্রম ৪</span>
+                    <strong class="font-bold text-sm">রূপ না বদলানো Irregular Verbs (Zero Change Verbs)</strong>
+                  </div>
+                  <p class="text-xs opacity-85 leading-relaxed">
+                    সাধারণত অতীতে <em>-ed</em> যোগ হয়। কিন্তু কিছু ভার্বের $V_1, V_2, V_3$ হুবহু একই থাকে:
+                  </p>
+                  <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs border border-current/20">
+                      <thead class="bg-current/10">
+                        <tr>
+                          <th class="p-1.5 border border-current/20">Base ($V_1$)</th>
+                          <th class="p-1.5 border border-current/20">Past ($V_2$)</th>
+                          <th class="p-1.5 border border-current/20">Participle ($V_3$)</th>
+                          <th class="p-1.5 border border-current/20">উচ্চারণ ও ট্রিকি দিক</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td class="p-1.5 border border-current/20 font-bold">Cut</td><td class="p-1.5 border border-current/20">Cut</td><td class="p-1.5 border border-current/20">Cut</td><td class="p-1.5 border border-current/20">কখনোই 'cutted' হয় না!</td></tr>
+                        <tr><td class="p-1.5 border border-current/20 font-bold">Put</td><td class="p-1.5 border border-current/20">Put</td><td class="p-1.5 border border-current/20">Put</td><td class="p-1.5 border border-current/20">কখনোই 'putted' হয় না!</td></tr>
+                        <tr><td class="p-1.5 border border-current/20 font-bold">Set</td><td class="p-1.5 border border-current/20">Set</td><td class="p-1.5 border border-current/20">Set</td><td class="p-1.5 border border-current/20">মান সেট করা: <em>"I set the value yesterday."</em></td></tr>
+                        <tr><td class="p-1.5 border border-current/20 font-bold">Read [reed]</td><td class="p-1.5 border border-current/20">Read [red]</td><td class="p-1.5 border border-current/20">Read [red]</td><td class="p-1.5 border border-current/20">বানান হুবহু একই, কিন্তু অতীতে উচ্চারণ হবে <strong>রেড (red)</strong>!</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- EXCEPTION 5 -->
+                <div class="p-3.5 rounded-lg eink-card border eink-border space-y-2">
+                  <div class="flex items-center gap-2">
+                    <span class="font-bold text-xs px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-900 dark:text-amber-200">ব্যতিক্রম ৫</span>
+                    <strong class="font-bold text-sm">The 'Had' 2-Event Filter (অপ্রয়োজনীয় Had বর্জন)</strong>
+                  </div>
+                  <p class="text-xs opacity-85 leading-relaxed">
+                    স্পোকেনে ৯৫% মানুষ ভুল করে একক অতীতের বাক্যে <em>Had</em> বসিয়ে ফেলে। মনে রাখবেন: <strong>অতীতে যদি কেবল একটি সাধারণ ঘটনা থাকে, সেখানে Had কোনো অবস্থাতেই বসবে না।</strong>
+                  </p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
+                    <div class="p-2 rounded bg-red-500/10 border border-red-500/30 text-red-700 dark:text-red-300">
+                      ❌ <em>I had called you yesterday.</em><br>
+                      ❌ <em>We had completed this last month.</em>
+                    </div>
+                    <div class="p-2 rounded bg-green-500/10 border border-green-500/30 text-green-700 dark:text-green-300">
+                      ✔️ <strong>I called you yesterday.</strong> ($V_2$)<br>
+                      ✔️ <strong>We completed this last month.</strong> ($V_2$)
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MODULE 3: WHITEBOARD SPELLING HACKS -->
+            <div class="eink-surface p-5 rounded-xl border eink-border space-y-4">
+              <h3 class="font-bold text-base border-b eink-border pb-2 flex items-center justify-between">
+                <span>✍️ হোয়াইটবোর্ডে লেখার বানান মেকানিক্স ও ২০টি মোস্ট ট্রিকি শব্দ</span>
+                <span class="text-xs font-normal opacity-70">বানানভীতি দূর করার মূল সূত্র</span>
+              </h3>
+              
+              <div class="space-y-3 text-xs opacity-90 leading-relaxed">
+                <div class="p-3 rounded-lg eink-card border eink-border space-y-2">
+                  <strong class="font-bold block text-sm">১. সাইলেন্ট 'e' ড্রপ রুল (Drop the 'e')</strong>
+                  <p>যদি শব্দের শেষে অনুচ্চারিত 'e' থাকে এবং আপনি <em>-ing</em> যোগ করেন, তবে 'e' বাদ চলে যাবে:</p>
+                  <p class="font-mono">Write $\rightarrow$ <strong>Writing</strong> (e বাদ, কিন্তু t সিঙ্গেল) | Code $\rightarrow$ <strong>Coding</strong> | Create $\rightarrow$ <strong>Creating</strong></p>
+                  <p class="text-amber-600 dark:text-amber-400">🚨 কিন্তু $V_3$ করার সময়: Write $\rightarrow$ <strong>Written</strong> (এখানে t ডাবল হয়!)</p>
+                </div>
+
+                <div class="p-3 rounded-lg eink-card border eink-border space-y-2">
+                  <strong class="font-bold block text-sm">২. 1-1-1 ডাবলিং রুল (CVC Rule - কখন শেষ অক্ষর ডাবল হয়?)</strong>
+                  <p>শব্দের শেষ ৩টি অক্ষর যদি Consonant + Vowel + Consonant (CVC) হয় এবং টান (Stress) শেষের সিলেবলে থাকে, তাহলে শেষ কনসোনেন্ট ডাবল হবে:</p>
+                  <p class="font-mono">Stop $\rightarrow$ <strong>Stopped</strong> / <strong>Stopping</strong> | Run $\rightarrow$ <strong>Running</strong> | Occur $\rightarrow$ <strong>Occurred</strong></p>
+                </div>
+
+                <div class="p-3 rounded-lg eink-card border eink-border space-y-2">
+                  <strong class="font-bold block text-sm">৩. সিএস শিক্ষকের ২০টি মোস্ট কমন হোয়াইটবোর্ড শব্দ (সিলেবল চাঙ্কিং)</strong>
+                  <p>বোর্ডে লেখার আগে শব্দগুলোকে মনে মনে এভাবে টুকরো করে উচ্চারণ করবেন:</p>
+                  
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                    <div class="p-2 rounded eink-surface border eink-border font-mono">
+                      <strong>1. Al - go - rithm</strong> (অ্যালগরিদম)<br>
+                      <strong>2. Que - ue</strong> (Q + ue + ue)<br>
+                      <strong>3. In - her - i - tance</strong> (ইনহেরিটেন্স)<br>
+                      <strong>4. Hier - ar - chy</strong> (হায়ারার্কি: H-i-e-r)<br>
+                      <strong>5. A - syn - chron - ous</strong> (অ্যাসিঙ্ক্রোনাস)<br>
+                      <strong>6. Bool - e - an</strong> (বুলিয়ান)<br>
+                      <strong>7. Pol - y - mor - phism</strong> (পলিমরফিজম)<br>
+                      <strong>8. Ex - cep - tion</strong> (ব্যতিক্রম/এক্সেপশন)<br>
+                      <strong>9. De - clar - a - tion</strong> (ডিক্লারেশন)<br>
+                      <strong>10. In - i - tial - i - za - tion</strong> (ইনশিয়ালাইজেশন)
+                    </div>
+                    <div class="p-2 rounded eink-surface border eink-border font-mono">
+                      <strong>11. Priv - i - lege</strong> (প্রিভিলেজ: i-l-e-g-e)<br>
+                      <strong>12. Main - ten - ance</strong> (মেইনটেন্যান্স: ten!)<br>
+                      <strong>13. Ne - ces - sa - ry</strong> (১টি c, ২টি s)<br>
+                      <strong>14. As - sign - ment</strong> (অ্যাসাইনমেন্ট: ২টি s)<br>
+                      <strong>15. Oc - cur - rence</strong> (২টি c, ২টি r)<br>
+                      <strong>16. Par - a - me - ter</strong> (প্যারামিটার)<br>
+                      <strong>17. Syn - tax</strong> (সিনট্যাক্স: y দিয়ে)<br>
+                      <strong>18. En - vi - ron - ment</strong> (এনভায়রনমেন্ট: n আছে)<br>
+                      <strong>19. Com - mit - tee</strong> (২টি m, ২টি t, ২টি e)<br>
+                      <strong>20. Pro - gram - ming</strong> (প্রোগ্রামিং: ২টি m)
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MODULE 4: TEACHER'S WHITEBOARD SURVIVAL PROTOCOL -->
+            <div class="eink-surface p-5 rounded-xl border eink-border space-y-3">
+              <h3 class="font-bold text-base border-b eink-border pb-2">📋 হোয়াইটবোর্ড সারভাইভাল প্রোটোকল (বোর্ড ভীতির ৩টি অ্যান্টিডোট)</h3>
+              <ol class="list-decimal list-inside space-y-2 text-xs opacity-90 leading-relaxed">
+                <li><strong>পজ অ্যান্ড রাইট (Pause & Write):</strong> মুখ দিয়ে শিক্ষার্থীদের দিকে তাকিয়ে কথা বলুন। কথা শেষ করে বোর্ডে ঘুরে ২ সেকেন্ড নিরবতা নিয়ে শান্তভাবে লিখুন। কথা বলতে বলতে লিখলে ব্রেইন মাল্টিটাস্কিং করতে গিয়ে সহজ বানানও ভুল করে।</li>
+                <li><strong>প্যারাগ্রাফ বর্জন:</strong> বোর্ডে কখনো ফুল সেন্টেন্স লিখবেন না। কেবল <em>Keywords, Bullet points, Flowcharts</em> এবং <em>Code snippets</em> লিখবেন। এতে স্মার্টনেস বাড়ে এবং ভুলের সম্ভাবনা শূন্য হয়।</li>
+                <li><strong>অলটারনেটিভ পদ্ধতি:</strong> যদি কোনো শব্দের বানান নিয়ে বোর্ডে ১ সেকেন্ডের জন্যও খটকা লাগে, সাথে সাথে সহজ সমার্থক শব্দ বা কোড ব্লক ব্যবহার করবেন। যেমন: <em>Hierarchical</em> নিয়ে সন্দেহ হলে ডাইরেক্ট ট্রি-ডায়াগ্রাম এঁকে ফেলুন!</li>
+              </ol>
+            </div>
+
+          </div>
+        `
+      },
     };
 
     // Render Selected Lesson
