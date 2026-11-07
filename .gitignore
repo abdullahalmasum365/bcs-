@@ -1,4 +1,7 @@
 # Ignore large PDF files to keep GitHub repository fast and within free limits
 *.pdf
+!English_Mastery_Guide_For_CS_Educator.pdf
+!Abdullah_Al_Masum_CV.pdf
+!CV_Abdullah_Al_Masum_CSC_Teacher.pdf
 scratch/
 temp_pages/

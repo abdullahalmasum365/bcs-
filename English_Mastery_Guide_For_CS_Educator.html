@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>The CS Educator's Spoken English & Grammar Mastery Guide</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 12mm 15mm 12mm 15mm;
+      @bottom-right {
+        content: counter(page);
+      }
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', 'Nirmala UI', Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.5;
+      font-size: 10pt;
+      background: #ffffff;
+    }
+
+    /* Page Break Utilities */
+    .page-break {
+      page-break-after: always;
+    }
+    .avoid-break {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    /* Cover Page */
+    .cover {
+      height: 98vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 3px solid #1e3a8a;
+      padding: 35px 30px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #f8fafc 0%, #eff6ff 100%);
+    }
+    .cover-top {
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: 20px;
+    }
+    .badge {
+      display: inline-block;
+      background: #1e3a8a;
+      color: #fff;
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    .cover-title {
+      font-size: 26pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .cover-subtitle {
+      font-size: 13pt;
+      color: #2563eb;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .cover-desc {
+      font-size: 10.5pt;
+      color: #475569;
+      line-height: 1.6;
+    }
+    .cover-features {
+      margin: 25px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    .feat-card {
+      background: #fff;
+      padding: 14px 16px;
+      border-radius: 6px;
+      border-left: 4px solid #2563eb;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .feat-card h4 {
+      font-size: 10.5pt;
+      color: #1e3a8a;
+      margin-bottom: 4px;
+    }
+    .feat-card p {
+      font-size: 9pt;
+      color: #64748b;
+    }
+    .cover-footer {
+      border-top: 2px solid #cbd5e1;
+      padding-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .footer-left h3 {
+      font-size: 12pt;
+      color: #0f172a;
+    }
+    .footer-left p {
+      font-size: 9pt;
+      color: #64748b;
+    }
+    .footer-right {
+      text-align: right;
+      font-size: 8.5pt;
+      color: #94a3b8;
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin-top: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #2563eb;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .section-title {
+      font-size: 15pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .section-tag {
+      font-size: 8.5pt;
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: 11.5pt;
+      color: #1e3a8a;
+      margin: 10px 0 6px 0;
+    }
+    p {
+      margin-bottom: 7px;
+      text-align: justify;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 12px 0;
+      font-size: 9pt;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 6px 9px;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    /* Callout Boxes */
+    .callout {
+      padding: 9px 13px;
+      border-radius: 5px;
+      margin: 8px 0 10px 0;
+      font-size: 9pt;
+      line-height: 1.45;
+    }
+    .callout-blue {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      color: #1e40af;
+    }
+    .callout-green {
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+      color: #166534;
+    }
+    .callout-amber {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      color: #92400e;
+    }
+    .callout-red {
+      background: #fef2f2;
+      border-left: 4px solid #ef4444;
+      color: #991b1b;
+    }
+    .callout-title {
+      font-weight: 700;
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Code & Example Blocks */
+    .example-box {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 8.8pt;
+      margin: 8px 0;
+      line-height: 1.45;
+    }
+    .example-box .accent {
+      color: #38bdf8;
+      font-weight: bold;
+    }
+    .example-box .success {
+      color: #4ade80;
+    }
+    .example-box .danger {
+      color: #f87171;
+    }
+    .example-box .comment {
+      color: #94a3b8;
+      font-style: italic;
+    }
+
+    /* SVG Graphics Container */
+    .graphic-center {
+      text-align: center;
+      margin: 10px auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== COVER PAGE ==================== -->
+  <div class="cover">
+    <div class="cover-top">
+      <span class="badge">Computer Science Educator Edition</span>
+      <h1 class="cover-title">Spoken English & Grammar<br>Mastery Guide</h1>
+      <div class="cover-subtitle">লজিক্যাল ইঞ্জিনিয়ারিং ফ্রেমওয়ার্কে স্পোকেন ফ্লুয়েন্সি ও ক্লাসরুম কমান্ড</div>
+      <p class="cover-desc">
+        ঐতিহ্যবাহী মুখস্থবিদ্যা নয়—কম্পিউটার সায়েন্স শিক্ষকের ব্রেইনের উপযোগী স্টেট মেশিন, ভিজ্যুয়াল মেটাফর এবং অ্যালগরিদমিক নিয়মে টেন্সের জড়তা দূরীকরণ, প্রিপজিশন ক্ল্যারিটি, হোয়াইটবোর্ড বানান আত্মবিশ্বাস ও রিয়েল-লাইফ সিচুয়েশন এক্সপ্ল্যানেশন ম্যানুয়াল।
+      </p>
+    </div>
+
+    <div class="cover-features">
+      <div class="feat-card">
+        <h4>১. The 3-State Tense Engine</h4>
+        <p>১২টি টেন্সের জটলা মুক্ত হয়ে শুধুমাত্র ৩টি লজিক্যাল স্টেটে অতীত, বর্তমান ও ভবিষ্যতের স্বতঃস্ফূর্ত প্রকাশ।</p>
+      </div>
+      <div class="feat-card">
+        <h4>২. V3 Past Participle Demystified</h4>
+        <p>পাস্ট পার্টিসিপলের বিভ্রান্তি দূরীকরণ: ফিনিশড স্ট্যাটাস ফ্ল্যাগ এবং বডিগার্ড রুল (have/has/had)।</p>
+      </div>
+      <div class="feat-card">
+        <h4>৩. Visual Prepositions (Mental Physics)</h4>
+        <p>Dartboard Metaphor (AT), Box vs Table (Into/Onto), Voice Arrow vs Gift (To/For)।</p>
+      </div>
+      <div class="feat-card">
+        <h4>৪. SAR Situation Framework</h4>
+        <p>Situation ➔ Action ➔ Resolution: যেকোনো ক্লাসরুম বা ইন্টারভিউ সিচুয়েশন ৩টি শটে সাবলীলভাবে বলা।</p>
+      </div>
+      <div class="feat-card">
+        <h4>৫. Whiteboard Spelling Hacks</h4>
+        <p>1-1-1 CVC ডাবলিং রুল, সাইলেন্ট 'E' ড্রপ এবং কম্পিউটার সায়েন্সের টার্মিনোলজি চাঙ্কিং মেথড।</p>
+      </div>
+      <div class="feat-card">
+        <h4>৬. Cambridge Primary CS Pedagogy</h4>
+        <p>আনপ্লাগড অ্যাক্টিভিটিস, গ্রোথ মাইন্ডসেট ও ডিবাগিং ডিটেকটিভ পেডাগজির আন্তর্জাতিক স্পোকেন এক্সপ্রেশন।</p>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <div class="footer-left">
+        <h3>Abdullah Al Masum</h3>
+        <p>Computer Science Teacher | Singapore School Kinderland & BrightChamps</p>
+        <p style="font-size: 8.5pt; color: #2563eb; font-weight: 600; margin-top: 2px;">Prepared with Antigravity AI Master Coach</p>
+      </div>
+      <div class="footer-right">
+        <p>Targeted for: Glenrich International School & Global Classrooms</p>
+        <p>Edition: Master Reference | November 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ==================== MODULE 1 ==================== -->
+  <div class="section-header">
+    <div class="section-title">Module 1: The 3-State Spoken Tense Engine</div>
+    <div class="section-tag">Tense Architecture</div>
+  </div>
+
+  <p>
+    বাংলা ভাষাভাষী শিক্ষকদের স্পোকেন ইংলিশে ফ্রিজ (freeze) হয়ে যাওয়ার প্রধান কারণ হলো: কথা বলার মুহূর্তে ব্রেইনে ১২টি টেন্সের ব্যাকরণ সূত্র একসাথে চিন্তা করা। কিন্তু বাস্তব জীবনে নেটিভ স্পিকার ও প্রফেশনালরা তাদের বক্তব্যের <strong>৯০% সময় মাত্র ৩টি স্টেটে</strong> কথা বলেন।
+  </p>
+
+  <!-- SVG Diagram: 3-State Tense Engine -->
+  <div class="graphic-center">
+    <svg width="650" height="150" viewBox="0 0 650 150" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background box -->
+      <rect x="5" y="5" width="640" height="140" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+      
+      <!-- State 1 -->
+      <g transform="translate(25, 25)">
+        <rect width="180" height="100" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+        <text x="90" y="25" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">STATE 1: Present (V1)</text>
+        <text x="90" y="45" font-family="'Segoe UI', sans-serif" font-size="9" fill="#2563eb" text-anchor="middle">রুটিন / ফ্যাক্ট / কাজের ধরন</text>
+        <line x1="15" y1="55" x2="165" y2="55" stroke="#bfdbfe" stroke-width="1"/>
+        <text x="90" y="73" font-family="'Consolas', monospace" font-size="9.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Subject + V1</text>
+        <text x="90" y="90" font-family="'Segoe UI', sans-serif" font-size="8.5" fill="#475569" text-anchor="middle">"I teach coding everyday."</text>
+      </g>
+
+      <!-- Arrow 1 to 2 -->
+      <path d="M 215 75 L 235 75" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <!-- State 2 -->
+      <g transform="translate(245, 25)">
+        <rect width="180" height="100" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+        <text x="90" y="25" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#991b1b" text-anchor="middle">STATE 2: Past (V2)</text>
+        <text x="90" y="45" font-family="'Segoe UI', sans-serif" font-size="9" fill="#dc2626" text-anchor="middle">অতীতের গল্প / শেষ ঘটনা</text>
+        <line x1="15" y1="55" x2="165" y2="55" stroke="#fecaca" stroke-width="1"/>
+        <text x="90" y="73" font-family="'Consolas', monospace" font-size="9.5" font-weight="bold" fill="#0f172a" text-anchor="middle">Subject + V2</text>
+        <text x="90" y="90" font-family="'Segoe UI', sans-serif" font-size="8.5" fill="#475569" text-anchor="middle">"Yesterday, I taught Scratch."</text>
+      </g>
+
+      <!-- Arrow 2 to 3 -->
+      <path d="M 435 75 L 455 75" stroke="#94a3b8" stroke-width="2"/>
+
+      <!-- State 3 -->
+      <g transform="translate(465, 25)">
+        <rect width="160" height="100" rx="6" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+        <text x="80" y="25" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#166534" text-anchor="middle">STATE 3: Future</text>
+        <text x="80" y="45" font-family="'Segoe UI', sans-serif" font-size="9" fill="#16a34a" text-anchor="middle">সামনে কী ঘটবে / প্ল্যান</text>
+        <line x1="15" y1="55" x2="145" y2="55" stroke="#bbf7d0" stroke-width="1"/>
+        <text x="80" y="73" font-family="'Consolas', monospace" font-size="9.5" font-weight="bold" fill="#0f172a" text-anchor="middle">will + V1</text>
+        <text x="80" y="90" font-family="'Segoe UI', sans-serif" font-size="8.5" fill="#475569" text-anchor="middle">"Tomorrow we will start."</text>
+      </g>
+    </svg>
+  </div>
+
+  <h3>১.১ স্টেটগুলোর পুঙ্খানুপুঙ্খ মেকানিক্স:</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 18%;">স্টেট (State)</th>
+        <th style="width: 25%;">কখন ব্যবহার করবেন?</th>
+        <th style="width: 22%;">স্ট্রাকচার ফর্মুলা</th>
+        <th style="width: 35%;">বাস্তব ক্লাসরুম উদাহরণ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>State 1: Present (V1)</strong></td>
+        <td>আপনার নিয়মিত অভ্যাস, পেশাগত দায়িত্ব, সফটওয়্যারের ফ্যাক্ট।</td>
+        <td><code>Subject + V1 (s/es)</code></td>
+        <td>• <em>"Computers <strong>follow</strong> instructions."</em><br>• <em>"A green flag <strong>triggers</strong> the loop."</em></td>
+      </tr>
+      <tr>
+        <td><strong>State 2: Past (V2)</strong></td>
+        <td>অতীতের যেকোনো গল্প, গতকালের ক্লাস বা আগের কোনো ফিক্স।</td>
+        <td><code>Subject + V2</code></td>
+        <td>• <em>"The student <strong>faced</strong> a bug."</em><br>• <em>"I <strong>helped</strong> him fix the code."</em></td>
+      </tr>
+      <tr>
+        <td><strong>State 3: Future</strong></td>
+        <td>পরবর্তী ক্লাসের পরিকল্পনা বা পরবর্তী পদক্ষেপ।</td>
+        <td><code>Subject + will + V1</code></td>
+        <td>• <em>"Next week, we <strong>will build</strong> an animation."</em><br>• <em>"I <strong>will demonstrate</strong> the loop."</em></td>
+      </tr>
+      <tr>
+        <td><strong>State 4: Live Action</strong></td>
+        <td>স্ক্রিনের দিকে তাকিয়ে এই মুহূর্তে যা ঘটছে।</td>
+        <td><code>am/is/are + V-ing</code></td>
+        <td>• <em>"The sprite <strong>is moving</strong> right now."</em><br>• <em>"They <strong>are coding</strong> games."</em></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-red avoid-break">
+    <div class="callout-title">⚠️ The Golden DID Rule (অতীতের সবচেয়ে বড় ভুল যেখানে হয়):</div>
+    অতীতে কোনো প্রশ্ন করতে বা 'না' (Negative) বলতে সেন্টেন্সে যখনই <strong>DID</strong> আসে, মূল ভার্ব সবসময় তার আদি রূপ <strong>V1 (Base Form)</strong>-এ ফিরে যায়!
+    <div class="example-box" style="margin-top: 5px;">
+      <span class="danger">❌ ভুল:</span> "The cat did not moved." | "Did you saw the bug?"<br>
+      <span class="success">✅ সঠিক:</span> "The cat <span class="accent">did not move</span>." | "Did you <span class="accent">see</span> the bug?"
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- ==================== MODULE 2 ==================== -->
+  <div class="section-header">
+    <div class="section-title">Module 2: Demystifying V3 & Past Participle</div>
+    <div class="section-tag">Finished State & Bodyguards</div>
+  </div>
+
+  <p>
+    শিক্ষার্থীদের সবচেয়ে বড় কনফিউশন তৈরি করে <strong>"Past Participle" (V3)</strong> শব্দটি। নামের সাথে "Past" থাকলেও এটি আসলে বর্তমান কালেও হরহামেশা ব্যবহৃত হয়। কম্পিউটার সায়েন্সের ভাষায় V3 হলো একটি <strong>`COMPLETED` Status Flag</strong>!
+  </p>
+
+  <div class="graphic-center">
+    <svg width="650" height="140" viewBox="0 0 650 140" xmlns="http://www.w3.org/2000/svg">
+      <rect x="5" y="5" width="640" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+      
+      <!-- Box 1: V2 -->
+      <g transform="translate(30, 20)">
+        <rect width="260" height="95" rx="6" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.5"/>
+        <text x="130" y="24" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#9f1239" text-anchor="middle">V2 (Past Simple) = ইতিহাস</text>
+        <text x="130" y="44" font-family="'Segoe UI', sans-serif" font-size="8.5" fill="#475569" text-anchor="middle">কাজটি অতীতে শেষ, বর্তমানের সাথে সম্পর্ক নেই।</text>
+        <text x="130" y="66" font-family="'Consolas', monospace" font-size="9.5" font-weight="bold" fill="#0f172a" text-anchor="middle">"I sent the CV yesterday."</text>
+        <text x="130" y="84" font-family="'Segoe UI', sans-serif" font-size="8.5" fill="#be123c" text-anchor="middle">(গতকাল পাঠিয়েছিলাম, তারিখ অতীত)</text>
+      </g>
+
+      <!-- Versus Circle -->
+      <circle cx="325" cy="68" r="18" fill="#1e3a8a"/>
+      <text x="325" y="73" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">VS</text>
+
+      <!-- Box 2: Have + V3 -->
+      <g transform="translate(360, 20)">
+        <rect width="260" height="95" rx="6" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+        <text x="130" y="24" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#065f46" text-anchor="middle">have + V3 = কমপ্লিট স্ট্যাটাস</text>
+        <text x="130" y="44" font-family="'Segoe UI', sans-serif" font-size="8.5" fill="#475569" text-anchor="middle">কাজ এইমাত্র সম্পন্ন, প্রমাণ/ফলাফল এখনই বিদ্যমান!</text>
+        <text x="130" y="66" font-family="'Consolas', monospace" font-size="9.5" font-weight="bold" fill="#0f172a" text-anchor="middle">"I have sent the CV."</text>
+        <text x="130" y="84" font-family="'Segoe UI', sans-serif" font-size="8.5" fill="#047857" text-anchor="middle">(এইমাত্র পাঠিয়েছি, মেইল চলে গেছে দেখুন)</text>
+      </g>
+    </svg>
+  </div>
+
+  <h3>২.১ The V3 Bodyguard Rule (বডিগার্ড রুল)</h3>
+  <div class="callout callout-amber avoid-break">
+    <div class="callout-title">🛡️ V3 কখনো একা হাঁটতে পারে না!</div>
+    <p>
+      ইংরেজি ভাষায় $V_1$ একা বসে, $V_2$ একা বসে। কিন্তু $V_3$ এতোই দুর্বল যে সে <strong>বডিগার্ড ছাড়া বাক্যেই বসতে পারে না!</strong> তার বডিগার্ড কারা? <code>have / has / had</code> অথবা <code>am / is / are / was / were</code>।<br>
+      • ❌ <em>"I done the project."</em> (বডিগার্ড নেই—ভুল!)<br>
+      • ✅ <em>"I <span style="font-weight:bold;">have done</span> the project."</em> (বডিগার্ড 'have' আছে—সঠিক!)
+    </p>
+  </div>
+
+  <h3>২.২ V3-এর দ্বিতীয় রূপ: Adjective (কোনো জিনিসের অবস্থা)</h3>
+  <p>V3 শুধু প্রেজেন্ট পারফেক্টেই লাগে না, কোনো জিনিসের ফিনিশড অবস্থা বোঝাতে চমৎকার কাজ করে:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>মূল ভার্ব (V1)</th>
+        <th>সম্পন্ন হওয়া অবস্থা (V3)</th>
+        <th>বাস্তব প্রয়োগ ও অর্থ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Break</strong> (ভাঙা)</td>
+        <td><strong>Broken</strong></td>
+        <td><em>"This is a <strong>broken</strong> mouse."</em> (ভাঙা মাউস)</td>
+      </tr>
+      <tr>
+        <td><strong>Connect</strong> (সংযুক্ত করা)</td>
+        <td><strong>Connected</strong></td>
+        <td><em>"The laptop is <strong>connected</strong> to Wi-Fi."</em> (কানেক্টেড অবস্থা)</td>
+      </tr>
+      <tr>
+        <td><strong>Close</strong> (বন্ধ করা)</td>
+        <td><strong>Closed</strong></td>
+        <td><em>"The tab is <strong>closed</strong>."</em> (ট্যাবটি বন্ধ অবস্থায় আছে)</td>
+      </tr>
+      <tr>
+        <td><strong>Write</strong> (লেখা)</td>
+        <td><strong>Written</strong></td>
+        <td><em>"The code is already <strong>written</strong>."</em> (কোডটি লেখা আছে)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>২.৩ ভার্বের ৪টি ফ্যামিলি (কোনো মুখস্থ ছাড়া চেনার উপায়):</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 28%;">ফ্যামিলি নাম</th>
+        <th style="width: 32%;">প্যাটার্ন ও সুর</th>
+        <th style="width: 40%;">উদাহরণ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>১. Zero-Change Family</strong></td>
+        <td>বর্তমান, অতীত, V3—সব জায়গায় একই চেহারা।</td>
+        <td><strong>Cut ➔ Cut ➔ Cut</strong><br><strong>Put ➔ Put ➔ Put</strong><br><strong>Set ➔ Set ➔ Set</strong></td>
+      </tr>
+      <tr>
+        <td><strong>২. The Twin Family</strong></td>
+        <td>V2 এবং V3 হুবহু যমজ ভাই! (একটি শিখলে দুটিই শেষ)।</td>
+        <td><strong>Teach ➔ Taught ➔ Taught</strong><br><strong>Catch ➔ Caught ➔ Caught</strong><br><strong>Build ➔ Built ➔ Built</strong><br><strong>Make ➔ Made ➔ Made</strong></td>
+      </tr>
+      <tr>
+        <td><strong>৩. i ➔ a ➔ u Vowel Shift</strong></td>
+        <td>মাঝের ভাওয়েলটি যথাক্রমে i, a, u-তে বদলায়।</td>
+        <td><strong>Sing ➔ Sang ➔ Sung</strong><br><strong>Begin ➔ Began ➔ Begun</strong><br><strong>Swim ➔ Swam ➔ Swum</strong></td>
+      </tr>
+      <tr>
+        <td><strong>৪. The "-en" Family</strong></td>
+        <td>V3-এর শেষে বাধ্যতামূলকভাবে n বা en যুক্ত হয়।</td>
+        <td><strong>Write ➔ Wrote ➔ Written</strong><br><strong>Give ➔ Gave ➔ Given</strong><br><strong>Take ➔ Took ➔ Taken</strong><br><strong>See ➔ Saw ➔ Seen</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <!-- ==================== MODULE 3 ==================== -->
+  <div class="section-header">
+    <div class="section-title">Module 3: Prepositions via Mental Physics</div>
+    <div class="section-tag">Visual Analogies</div>
+  </div>
+
+  <p>
+    প্রিপজিশন কোনো নিয়ম মুখস্থের বিষয় নয়—এটি হলো মনের চোখ দিয়ে দেখা <strong>ফিজিক্যাল মেটাফর (Visual Physics)</strong>।
+  </p>
+
+  <!-- Visual Prepositions Graphics -->
+  <div class="graphic-center">
+    <svg width="650" height="175" viewBox="0 0 650 175" xmlns="http://www.w3.org/2000/svg">
+      <!-- Metaphor 1: Dartboard -->
+      <g transform="translate(15, 10)">
+        <rect width="195" height="155" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+        <text x="97" y="22" font-family="'Segoe UI', sans-serif" font-size="10.5" font-weight="bold" fill="#1e3a8a" text-anchor="middle">১. Dartboard (AT 🎯)</text>
+        <!-- Target circles -->
+        <circle cx="97" cy="72" r="38" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+        <circle cx="97" cy="72" r="25" fill="#fecaca" stroke="#ef4444" stroke-width="1.5"/>
+        <circle cx="97" cy="72" r="12" fill="#ef4444"/>
+        <!-- Arrow hitting bullseye -->
+        <line x1="45" y1="35" x2="94" y2="70" stroke="#0f172a" stroke-width="2.5"/>
+        <polygon points="97,72 88,67 92,76" fill="#0f172a"/>
+        <text x="97" y="125" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="bold" fill="#0f172a" text-anchor="middle">নির্দিষ্ট টার্গেট পয়েন্ট / স্কিল</text>
+        <text x="97" y="142" font-family="'Consolas', monospace" font-size="8" fill="#2563eb" text-anchor="middle">good AT coding | look AT board</text>
+      </g>
+
+      <!-- Metaphor 2: Box vs Table -->
+      <g transform="translate(225, 10)">
+        <rect width="200" height="155" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+        <text x="100" y="22" font-family="'Segoe UI', sans-serif" font-size="10.5" font-weight="bold" fill="#1e3a8a" text-anchor="middle">২. Box vs Table (Into/Onto)</text>
+        <!-- Box (3D) -->
+        <rect x="20" y="55" width="55" height="45" rx="3" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+        <path d="M 47 38 L 47 52" stroke="#4f46e5" stroke-width="2" marker-end="url(#arrow)"/>
+        <text x="47" y="112" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="bold" fill="#4338ca" text-anchor="middle">INTO (ভেতরে)</text>
+        <!-- Table/Surface (2D) -->
+        <line x1="110" y1="85" x2="185" y2="85" stroke="#0284c7" stroke-width="3"/>
+        <path d="M 147 48 L 147 80" stroke="#0284c7" stroke-width="2"/>
+        <text x="147" y="112" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="bold" fill="#0369a1" text-anchor="middle">ONTO (উপরিভাগে)</text>
+        <text x="100" y="132" font-family="'Segoe UI', sans-serif" font-size="8" fill="#475569" text-anchor="middle">save INTO folder | drag ONTO screen</text>
+        <text x="100" y="145" font-family="'Consolas', monospace" font-size="8" fill="#64748b" text-anchor="middle">(বক্সের ভেতরে vs সমতলে)</text>
+      </g>
+
+      <!-- Metaphor 3: Arrow vs Gift -->
+      <g transform="translate(440, 10)">
+        <rect width="195" height="155" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+        <text x="97" y="22" font-family="'Segoe UI', sans-serif" font-size="10.5" font-weight="bold" fill="#1e3a8a" text-anchor="middle">৩. Arrow vs Gift (To / For)</text>
+        <!-- Voice arrow -->
+        <line x1="25" y1="65" x2="80" y2="65" stroke="#16a34a" stroke-width="3"/>
+        <polygon points="85,65 75,60 75,70" fill="#16a34a"/>
+        <text x="55" y="85" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="bold" fill="#15803d" text-anchor="middle">TO (দিক / মুখ থেকে কান)</text>
+        <text x="55" y="98" font-family="'Consolas', monospace" font-size="7.5" fill="#475569" text-anchor="middle">Listen TO me</text>
+        <!-- Gift Box -->
+        <rect x="120" y="50" width="45" height="35" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+        <line x1="142" y1="50" x2="142" y2="85" stroke="#d97706" stroke-width="2"/>
+        <line x1="120" y1="67" x2="165" y2="67" stroke="#d97706" stroke-width="2"/>
+        <text x="142" y="100" font-family="'Segoe UI', sans-serif" font-size="8" font-weight="bold" fill="#b45309" text-anchor="middle">FOR (উপকার / উদ্দেশ্য)</text>
+        <text x="97" y="125" font-family="'Segoe UI', sans-serif" font-size="8.5" fill="#0f172a" text-anchor="middle">Explain code TO students</text>
+        <text x="97" y="142" font-family="'Consolas', monospace" font-size="8" fill="#2563eb" text-anchor="middle">Loops are FOR repetition</text>
+      </g>
+    </svg>
+  </div>
+
+  <h3>৩.১ ইন-অন-অ্যাট পিরামিড (In, On, At Pyramid Rule):</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>প্রিপজিশন</th>
+        <th>স্থানের ক্ষেত্রে (Space)</th>
+        <th>সময়ের ক্ষেত্রে (Time)</th>
+        <th>টেক ও ক্লাসরুম উদাহরণ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>IN</strong> (সবচেয়ে বড় / ঘেরা)</td>
+        <td>চারপাশ ঘেরা জায়গা, দেশ, ফোল্ডার।</td>
+        <td>বছর, মাস, শতাব্দী (*In 2026, in November*).</td>
+        <td>• <em>"In the computer lab."</em><br>• <em>"Save it in this folder."</em></td>
+      </tr>
+      <tr>
+        <td><strong>ON</strong> (উপরিভাগ / সারফেস)</td>
+        <td>সমতল তলে লেগে থাকা, স্ক্রিন, টেবিল।</td>
+        <td>বার এবং নির্দিষ্ট তারিখ (*On Monday, on Nov 5*).</td>
+        <td>• <em>"On the whiteboard."</em><br>• <em>"The icon is on the screen."</em></td>
+      </tr>
+      <tr>
+        <td><strong>AT</strong> (সুনির্দিষ্ট নিশানা)</td>
+        <td>একটি নির্দিষ্ট ঠিকানা বা বিন্দু।</td>
+        <td>ঘড়ির কাঁটার নিখুঁত সময় (*At 9:30 AM*).</td>
+        <td>• <em>"At school."</em><br>• <em>"Look at line number 4."</em></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>৩.২ বাই বনাম উইথ (BY vs WITH) — কার দ্বারা vs কী দিয়ে:</h3>
+  <div class="callout callout-green avoid-break">
+    <p>
+      • <strong>BY = The Agent (মানুষ বা কে কাজটি করেছে):</strong> <em>"The game was created <strong>by</strong> Rahul."</em><br>
+      • <strong>WITH = The Tool (যে যন্ত্র বা সফটওয়্যার দিয়ে করা হয়েছে):</strong> <em>"...<strong>with</strong> Scratch and a mouse."</em><br>
+      <span style="font-weight:bold;">একত্রে:</span> <em>"The animation was designed <strong>by</strong> Sarah <strong>with</strong> a tablet."</em>
+    </p>
+  </div>
+
+  <h3>৩.৩ শিক্ষকদের ৫টি মারাত্মক প্রিপজিশন ট্র্যাপ (ভুল বনাম সঠিক):</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>ভুল প্যাটার্ন (যা মুখে চলে আসে)</th>
+        <th>সঠিক স্পোকেন প্যাটার্ন</th>
+        <th>লজিক</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>❌ <em>"I am good in coding."</em></td>
+        <td>✅ <strong>"I am good at coding."</strong></td>
+        <td>দক্ষতা বা স্কিল হলো তীর মারার নিশানা (Dartboard 🎯) ➔ <strong>AT</strong>।</td>
+      </tr>
+      <tr>
+        <td>❌ <em>"Please explain me the code."</em></td>
+        <td>✅ <strong>"Please explain the code to me."</strong></td>
+        <td>তথ্য মুখ থেকে কানের দিকে ছুটে যায় ➔ <strong>TO</strong>।</td>
+      </tr>
+      <tr>
+        <td>❌ <em>"It happened with him."</em></td>
+        <td>✅ <strong>"It happened to him."</strong></td>
+        <td>কোনো ঘটনা কারো উপর আপতিত হলে ➔ <strong>TO</strong>।</td>
+      </tr>
+      <tr>
+        <td>❌ <em>"Output depends of the code."</em></td>
+        <td>✅ <strong>"Output depends on the code."</strong></td>
+        <td>কারো ওপর নির্ভর করা ➔ <strong>Depend ON</strong>।</td>
+      </tr>
+      <tr>
+        <td>❌ <em>"Students are interested to learn."</em></td>
+        <td>✅ <strong>"Students are interested in learning."</strong></td>
+        <td>কোনো বিষয়ে আগ্রহী হওয়া ➔ <strong>Interested IN</strong>।</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <!-- ==================== MODULE 4 ==================== -->
+  <div class="section-header">
+    <div class="section-title">Module 4: The SAR Framework for Situations</div>
+    <div class="section-tag">Spoken Fluency</div>
+  </div>
+
+  <p>
+    ভাইভাতে বা ক্লাসে যখনই কোনো সিচুয়েশন ব্যাখ্যা করতে বলা হয়, তখন বাংলায় দীর্ঘ বাক্য চিন্তা করায় মুখ দিয়ে ইংরেজি আসে না। আজ থেকে যেকোনো পরিস্থিতি আপনি বলবেন <strong>SAR ফ্রেমওয়ার্কের ৩টি ছোট বাক্যে</strong>:
+  </p>
+
+  <div class="graphic-center">
+    <svg width="650" height="110" viewBox="0 0 650 110" xmlns="http://www.w3.org/2000/svg">
+      <rect x="5" y="5" width="640" height="100" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+      
+      <!-- S -->
+      <g transform="translate(25, 20)">
+        <rect width="180" height="70" rx="5" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+        <text x="90" y="26" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">[ S ] Situation</text>
+        <text x="90" y="44" font-family="'Segoe UI', sans-serif" font-size="9" fill="#2563eb" text-anchor="middle">কে এবং কোথায় ছিল?</text>
+        <text x="90" y="60" font-family="'Consolas', monospace" font-size="8" fill="#0f172a" text-anchor="middle">"A student had a bug..."</text>
+      </g>
+
+      <!-- Arrow -->
+      <path d="M 215 55 L 235 55" stroke="#94a3b8" stroke-width="2"/>
+
+      <!-- A -->
+      <g transform="translate(245, 20)">
+        <rect width="180" height="70" rx="5" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+        <text x="90" y="26" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#991b1b" text-anchor="middle">[ A ] Action / Problem</text>
+        <text x="90" y="44" font-family="'Segoe UI', sans-serif" font-size="9" fill="#dc2626" text-anchor="middle">কী সমস্যা ঘটল?</text>
+        <text x="90" y="60" font-family="'Consolas', monospace" font-size="8" fill="#0f172a" text-anchor="middle">"His cat was not moving..."</text>
+      </g>
+
+      <!-- Arrow -->
+      <path d="M 435 55 L 455 55" stroke="#94a3b8" stroke-width="2"/>
+
+      <!-- R -->
+      <g transform="translate(465, 20)">
+        <rect width="160" height="70" rx="5" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+        <text x="80" y="26" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#166534" text-anchor="middle">[ R ] Resolution</text>
+        <text x="80" y="44" font-family="'Segoe UI', sans-serif" font-size="9" fill="#16a34a" text-anchor="middle">আপনি কী সমাধান করলেন?</text>
+        <text x="80" y="60" font-family="'Consolas', monospace" font-size="8" fill="#0f172a" text-anchor="middle">"I helped him snap blocks."</text>
+      </g>
+    </svg>
+  </div>
+
+  <h3>৪.১ বাস্তব ইন্টারভিউ সিমুলেশন (Interview Scenario):</h3>
+  <div class="example-box">
+    <span class="accent">Interviewer:</span> "Masum, how do you handle a student who gives up when code fails?"<br><br>
+    <span class="comment">// ৩টি শর্ট শটে SAR দিয়ে আপনার উত্তর:</span><br>
+    <span class="success">[S - Situation]:</span> "In my Grade 2 class, a student got frustrated because his character fell off the stage."<br>
+    <span class="success">[A - Action]:</span> "He crossed his arms and said, 'I can't do this.' I knelt down to his eye level and smiled."<br>
+    <span class="success">[R - Resolution]:</span> "I introduced the 'Bug Detective Game'. Together, we adjusted the X-coordinate, the character jumped, and he gave me a high-five."
+  </div>
+
+  <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 15px 0;">
+
+  <!-- ==================== MODULE 5 ==================== -->
+  <div class="section-header">
+    <div class="section-title">Module 5: Whiteboard Spelling Hacks</div>
+    <div class="section-tag">Spelling Confidence</div>
+  </div>
+
+  <p>হোয়াইটবোর্ডে লেখার সময় স্পেলিং ফোবিয়া দূর করতে এই ৩টি সুনির্দিষ্ট অর্থোগ্রাফিক রুল মেনে চলুন:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 25%;">বানানের সুবর্ণ নিয়ম</th>
+        <th style="width: 35%;">লজিক ও মেকানিক্স</th>
+        <th style="width: 40%;">বোর্ডের বাস্তব উদাহরণ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>১. 1-1-1 CVC Doubling Rule</strong></td>
+        <td>১টি Syllable + ১টি Vowel + ১টি Consonant থাকলে 'ed' বা 'ing' যোগ করার সময় শেষের অক্ষর ডাবল হবে।</td>
+        <td>• <strong>Stop</strong> ➔ Stop<strong>ped</strong> / Stop<strong>ping</strong><br>• <strong>Run</strong> ➔ Run<strong>ning</strong><br>• <strong>Plan</strong> ➔ Plan<strong>ned</strong></td>
+      </tr>
+      <tr>
+        <td><strong>২. Drop the Silent 'E'</strong></td>
+        <td>শব্দের শেষের 'e' যদি অনুচ্চারিত থাকে, তবে 'ing' যোগ করার সময় 'e' মুছে যাবে।</td>
+        <td>• <strong>Code</strong> ➔ Cod<strong>ing</strong> (Codeing ❌)<br>• <strong>Write</strong> ➔ Writ<strong>ing</strong> (Writeing ❌)<br>• <strong>Create</strong> ➔ Creat<strong>ing</strong></td>
+      </tr>
+      <tr>
+        <td><strong>৩. The 'Y' Transformation</strong></td>
+        <td>'y'-এর পূর্বে কনসোনেন্ট থাকলে 'ed' করার সময় 'y' বদলে 'i' হবে।</td>
+        <td>• <strong>Try</strong> ➔ Tr<strong>ied</strong> (Tryed ❌)<br>• <strong>Apply</strong> ➔ Appl<strong>ied</strong> (Applyed ❌)</td>
+      </tr>
+      <tr>
+        <td><strong>৪. Word Chunking Method</strong></td>
+        <td>বড় শব্দকে মুখস্থ না করে সিলেবল অনুযায়ী ৩ টুকরো করে বোর্ডে লিখুন।</td>
+        <td>• <strong>Al - go - rithm</strong> (Algorithm)<br>• <strong>Se - quen - ce</strong> (Sequence)<br>• <strong>Sep - a - rate</strong> (মাঝে আছে a rat 🐀)<br>• <strong>To - mor - row</strong> (১টি m, ২টি r)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <!-- ==================== MODULE 6 ==================== -->
+  <div class="section-header">
+    <div class="section-title">Module 6: Articles Binary Decision Tree</div>
+    <div class="section-tag">Grammar Architecture</div>
+  </div>
+
+  <p>আর্টিকেলে (A, An, The বা No Article) ভুল না করার জন্য নিজেকে মাত্র দুটি প্রশ্ন করবেন:</p>
+
+  <div class="graphic-center">
+    <svg width="650" height="150" viewBox="0 0 650 150" xmlns="http://www.w3.org/2000/svg">
+      <rect x="5" y="5" width="640" height="140" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+      
+      <!-- Node 1 -->
+      <rect x="25" y="45" width="180" height="60" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="115" y="68" font-family="'Segoe UI', sans-serif" font-size="9.5" font-weight="bold" fill="#1e3a8a" text-anchor="middle">শ্রোতা কি নির্দিষ্টভাবে চেনে?</text>
+      <text x="115" y="86" font-family="'Segoe UI', sans-serif" font-size="8.5" fill="#475569" text-anchor="middle">(Specific / Known Item?)</text>
+
+      <!-- Yes Branch -->
+      <path d="M 205 60 L 260 30" stroke="#16a34a" stroke-width="2"/>
+      <text x="235" y="40" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="bold" fill="#16a34a">YES</text>
+      <rect x="260" y="15" width="130" height="38" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+      <text x="325" y="38" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#166534" text-anchor="middle">THE ব্যবহার করুন</text>
+
+      <!-- No Branch -->
+      <path d="M 205 85 L 260 105" stroke="#dc2626" stroke-width="2"/>
+      <text x="235" y="105" font-family="'Segoe UI', sans-serif" font-size="8.5" font-weight="bold" fill="#dc2626">NO</text>
+      
+      <!-- Node 2 -->
+      <rect x="260" y="85" width="170" height="50" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+      <text x="345" y="105" font-family="'Segoe UI', sans-serif" font-size="9" font-weight="bold" fill="#9a3412" text-anchor="middle">একটি এবং গোনা যায়?</text>
+      <text x="345" y="122" font-family="'Segoe UI', sans-serif" font-size="8" fill="#475569" text-anchor="middle">(Singular Countable?)</text>
+
+      <!-- Sub Yes -->
+      <path d="M 430 100 L 485 85" stroke="#16a34a" stroke-width="2"/>
+      <rect x="485" y="68" width="145" height="35" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5"/>
+      <text x="557" y="90" font-family="'Segoe UI', sans-serif" font-size="10.5" font-weight="bold" fill="#3730a3" text-anchor="middle">A বা AN</text>
+
+      <!-- Sub No -->
+      <path d="M 430 120 L 485 130" stroke="#dc2626" stroke-width="2"/>
+      <rect x="485" y="112" width="145" height="32" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+      <text x="557" y="132" font-family="'Segoe UI', sans-serif" font-size="9.5" font-weight="bold" fill="#991b1b" text-anchor="middle">NO ARTICLE (Zero)</text>
+    </svg>
+  </div>
+
+  <div class="callout callout-blue avoid-break" style="margin-top: 15px;">
+    <div class="callout-title">💡 কম্পিউটার সায়েন্সের ৩টি আর্টিকেল রুল:</div>
+    ১. <strong>Specific:</strong> <em>"Click <strong>the</strong> green flag."</em> (নির্দিষ্ট সেই সবুজ ফ্ল্যাগটি)<br>
+    ২. <strong>General Single:</strong> <em>"Bring <strong>a</strong> laptop."</em> (যেকোনো একটি ল্যাপটপ)<br>
+    ৩. <strong>Concepts / Languages (Zero Article):</strong> <em>"I teach <strong>coding</strong>."</em> (The coding ❌) | <em>"We love <strong>technology</strong>."</em> (The technology ❌)
+  </div>
+
+  <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 15px 0;">
+
+  <!-- ==================== MODULE 7 ==================== -->
+  <div class="section-header">
+    <div class="section-title">Module 7: The Master 60-Second Interview Pitch</div>
+    <div class="section-tag">High-Register Spoken Script</div>
+  </div>
+
+  <p>গ্লেনরিচ বা যেকোনো আন্তর্জাতিক স্কুলের ভাইভা বোর্ডে নিজেকে উপস্থাপন করার জন্য এই স্ক্রিপ্টটি নিয়মিত প্র্যাকটিস করুন:</p>
+
+  <div class="example-box">
+    <span class="comment">// 60-Second Executive Pitch (চোখে চোখ রেখে, মুখে মৃদু আত্মবিশ্বাসী হাসি দিয়ে):</span><br><br>
+    "<span class="accent">My name is Abdullah Al Masum.</span> Currently, I serve as a Computer Science Teacher at Singapore School Kinderland and a Global Coding Educator at BrightChamps.<br><br>
+    <span class="success">My core passion</span> is nurturing young minds through computational thinking and creative problem-solving.<br><br>
+    As Artificial Intelligence rapidly reshapes our world, my mission is to build foundational <span class="accent">AI literacy</span> and <span class="accent">technology ethics</span> from an early age—empowering our students to become confident <span class="success">creators of technology, rather than just passive consumers</span>."
+  </div>
+
+  <div class="callout callout-green avoid-break">
+    <div class="callout-title">🎯 ভাইভা বোর্ডে বাজিমাত করার ৪টি পাওয়ার টার্মস:</div>
+    ১. <strong>Computational Thinking:</strong> মুখস্থ কোডিং নয়, যুক্তি দিয়ে চিন্তা করার ক্ষমতা।<br>
+    ২. <strong>Unplugged Activities:</strong> স্ক্রিন ছাড়া খেলার ছলে বাস্তব জীবনে অ্যালগরিদম ও সিকোয়েন্সিং শেখানো।<br>
+    ৩. <strong>Eliminates Syntax Frustration:</strong> ৫-৬ বছর বয়সী শিশুদের টাইপিংয়ের ভুল ছাড়াই ব্লক-বেসড কোডিংয়ে লজিক তৈরি।<br>
+    ৪. <strong>Growth Mindset & Debugging:</strong> কোডে ভুল হওয়া অপরাধ নয়—ভুল হলো একটি 'Bug' এবং শিক্ষার্থীরা হলো 'Bug Detective'।
+  </div>
+
+</body>
+</html>
